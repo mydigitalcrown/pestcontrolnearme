@@ -644,6 +644,72 @@ p:last-child { margin-bottom: 0; }
 .service-card-features li { font-size: .82rem; color: var(--gray-600); padding: .2rem 0; }
 .service-card-link { margin-top: auto; text-align: center; padding: 0 1.5rem 1.5rem; }
 
+/* ----- RESIDENTIAL & COMMERCIAL SECTION -------------------- */
+.res-com-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.res-com-card {
+  background: var(--white);
+  border: 2px solid var(--sky-100);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.res-com-card:hover {
+  border-color: var(--sky-300);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+.res-com-img-wrap {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+.res-com-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.res-com-card:hover .res-com-img-wrap img { transform: scale(1.05); }
+.res-com-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.res-com-icon { font-size: 2.5rem; margin-bottom: .75rem; }
+.res-com-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--gray-900);
+  margin-bottom: .75rem;
+}
+.res-com-desc {
+  font-size: .95rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+.res-com-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+.res-com-features li {
+  font-size: .9rem;
+  color: var(--gray-700);
+}
+
 /* ----- CTA SECTION ---------------------------------------- */
 .cta-section {
   padding: 80px 0;

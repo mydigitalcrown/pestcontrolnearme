@@ -1,0 +1,58 @@
+<% var sectionCity = (typeof location !== 'undefined' && location) ? location.name : (typeof heroLocation !== 'undefined' ? heroLocation : 'Mumbai'); %>
+<!-- Residential & Commercial Pest Control Section -->
+<section class="res-com-section section-pad" aria-label="Residential and Commercial Pest Control">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">Our Expertise</p>
+      <h2 class="section-title">Residential & Commercial Pest Control in <%= sectionCity %></h2>
+      <p class="section-desc">Tailored pest management solutions for every need – from family homes to large commercial establishments.</p>
+    </div>
+    <div class="res-com-grid">
+
+      <!-- Residential Card -->
+      <div class="res-com-card">
+        <div class="res-com-img-wrap">
+          <img src="/images/residential-pest-control.png" alt="Residential Pest Control in <%= sectionCity %>"
+            width="600" height="400" loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="res-com-body">
+          <div class="res-com-icon">🏠</div>
+          <h3 class="res-com-title">Residential Pest Control</h3>
+          <p class="res-com-desc">Protect your home and family from harmful pests. Our residential pest control services in <%= sectionCity %> cover apartments, villas, bungalows, and housing societies with safe, eco-friendly treatments.</p>
+          <ul class="res-com-features">
+            <li>✅ Safe for children & pets</li>
+            <li>✅ Odourless & non-messy treatments</li>
+            <li>✅ Annual Maintenance Contracts (AMC)</li>
+            <li>✅ Same-day service available</li>
+            <li>✅ 3-month service guarantee</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get Home Inspection →</a>
+        </div>
+      </div>
+
+      <!-- Commercial Card -->
+      <div class="res-com-card">
+        <div class="res-com-img-wrap">
+          <img src="/images/commercial-pest-control.png" alt="Commercial Pest Control in <%= sectionCity %>"
+            width="600" height="400" loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+        <div class="res-com-body">
+          <div class="res-com-icon">🏢</div>
+          <h3 class="res-com-title">Commercial Pest Control</h3>
+          <p class="res-com-desc">Keep your business pest-free and compliant. We serve offices, restaurants, hotels, hospitals, warehouses, and factories in <%= sectionCity %> with industry-grade pest management programs.</p>
+          <ul class="res-com-features">
+            <li>✅ FSSAI & regulatory compliant</li>
+            <li>✅ Minimal business disruption</li>
+            <li>✅ Scheduled after-hours service</li>
+            <li>✅ Detailed service reports</li>
+            <li>✅ Dedicated account manager</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get Business Quote →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
