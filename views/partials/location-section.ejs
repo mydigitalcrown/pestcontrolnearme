@@ -10,7 +10,7 @@
 
       <!-- All Cities Grid -->
       <div class="location-featured">
-        <% locations.slice(0, 30).forEach(function(loc){ %>
+        <% locations.forEach(function(loc){ %>
         <a href="/pest-control-in/<%= loc.slug %>" class="location-featured-card">
           <span class="lfc-pin">📍</span>
           <span class="lfc-name"><%= loc.name %></span>
