@@ -1,5 +1,18 @@
 <!-- SERVICES SECTION COMPONENT -->
 <% var sectionLocation = (typeof heroLocation !== 'undefined' && heroLocation) ? heroLocation : 'Mumbai'; %>
+<%
+var serviceImages = {
+  'cockroach-control': 'Cockroach.png',
+  'termite-control': 'Termite.png',
+  'mosquito-control': 'Mosquito.png',
+  'rodent-control': 'Rodent.png',
+  'bed-bug-control': 'Bed-Bug.png',
+  'ant-control': 'Ant.png',
+  'fly-control': 'Fly.png',
+  'lizard-control': 'Lizard.png',
+  'spider-control': 'Spider.png'
+};
+%>
 <section class="services-section section-pad bg-light" aria-label="Our Services">
   <div class="container">
     <div class="section-header text-center">
@@ -9,8 +22,17 @@
     </div>
     <div class="services-grid">
       <% services.forEach(function(svc) { %>
+      <% var svcImg = serviceImages[svc.slug]; %>
       <article class="service-card" itemscope itemtype="https://schema.org/Service">
-        <div class="service-card-icon"><%= svc.icon %></div>
+        <div class="service-card-img-wrap">
+          <% if (svcImg) { %>
+            <img src="/images/<%= svcImg %>" alt="<%= svc.name %>" class="service-card-img" loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="service-card-icon-fallback" style="display:none"><%= svc.icon %></div>
+          <% } else { %>
+            <div class="service-card-icon-fallback"><%= svc.icon %></div>
+          <% } %>
+        </div>
         <div class="service-card-body">
           <h3 class="service-card-title" itemprop="name"><%= svc.name %></h3>
           <p class="service-card-desc" itemprop="description"><%= svc.shortDesc %></p>
@@ -20,7 +42,7 @@
             <li>✅ Same-Day Service</li>
           </ul>
         </div>
-        <a href="/services/<%= svc.slug %>" class="service-card-link btn btn-outline" 
+        <a href="/services/<%= svc.slug %>" class="service-card-link btn btn-outline"
           itemprop="url" aria-label="Learn more about <%= svc.name %> in <%= sectionLocation %>">
           Know More →
         </a>
