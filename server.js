@@ -47,9 +47,9 @@ app.use((req, res, next) => {
   res.locals.locations = locations;
   res.locals.siteName = "PestControlNearMe";
   res.locals.siteUrl = "https://www.pestcontrolnearme.in";
-  res.locals.phone = "+91 98765 43210";
-  res.locals.phone2 = "+91 80000 12345";
-  res.locals.email = "info@pestcontrolnearme.in";
+  res.locals.phone = "+91 94533 94533";
+  res.locals.phone2 = "+91 94533 94533";
+  res.locals.email = "jitendra.gupta700@gmail.com";
   res.locals.currentPath = req.path;
   next();
 });
@@ -72,7 +72,7 @@ app.get('/', (req, res) => {
       "name": "PestControlNearMe",
       "@id": "https://www.pestcontrolnearme.in",
       "url": "https://www.pestcontrolnearme.in",
-      "telephone": "+91-9876543210",
+      "telephone": "+91-9453394533",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Mumbai",
@@ -111,7 +111,7 @@ app.get('/about', (req, res) => {
 app.get('/contact', (req, res) => {
   const page = {
     title: "Contact Pest Control Mumbai | Free Inspection & Quote",
-    metaDesc: "Contact PestControlNearMe in Mumbai for free inspection and instant quote. Call +91 98765 43210 or fill our online form. Same-day response guaranteed!",
+    metaDesc: "Contact PestControlNearMe in Mumbai for free inspection and instant quote. Call +91 94533 94533 or fill our online form. Same-day response guaranteed!",
     keywords: "contact pest control mumbai, pest control phone number mumbai",
     canonical: "https://www.pestcontrolnearme.in/contact",
     heroTitle: "Contact Us – Free Pest Inspection",
