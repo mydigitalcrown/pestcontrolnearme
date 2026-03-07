@@ -1,55 +1,95 @@
 <% var sectionCity = (typeof location !== 'undefined' && location) ? location.name : (typeof heroLocation !== 'undefined' ? heroLocation : 'Mumbai'); %>
 <!-- Residential & Commercial Pest Control Section -->
-<section class="res-com-section section-pad" aria-label="Residential and Commercial Pest Control">
+<section class="res-com-section" aria-label="Residential and Commercial Pest Control">
+  <div class="res-com-bg-pattern"></div>
   <div class="container">
     <div class="section-header text-center">
       <p class="section-tag">Our Expertise</p>
       <h2 class="section-title">Residential & Commercial Pest Control in <%= sectionCity %></h2>
-      <p class="section-desc">Tailored pest management solutions for every need – from family homes to large commercial establishments.</p>
+      <p class="section-desc">Tailored pest management solutions for every need – from cozy family homes to large commercial establishments.</p>
     </div>
+
     <div class="res-com-grid">
 
       <!-- Residential Card -->
-      <div class="res-com-card">
+      <div class="res-com-card res-com-card--home">
         <div class="res-com-img-wrap">
-          <img src="/images/residential-pest-control.png" alt="Residential Pest Control in <%= sectionCity %>"
-            width="600" height="400" loading="lazy"
-            onerror="this.style.display='none'">
+          <img src="/images/residential-pest-control.png" alt="Residential Pest Control in <%= sectionCity %>" width="600" height="420" loading="lazy" onerror="this.style.display='none'">
+          <div class="res-com-img-overlay">
+            <span class="res-com-badge">🏠 For Your Home</span>
+          </div>
         </div>
         <div class="res-com-body">
-          <div class="res-com-icon">🏠</div>
-          <h3 class="res-com-title">Residential Pest Control</h3>
-          <p class="res-com-desc">Protect your home and family from harmful pests. Our residential pest control services in <%= sectionCity %> cover apartments, villas, bungalows, and housing societies with safe, eco-friendly treatments.</p>
-          <ul class="res-com-features">
-            <li>✅ Safe for children & pets</li>
-            <li>✅ Odourless & non-messy treatments</li>
-            <li>✅ Annual Maintenance Contracts (AMC)</li>
-            <li>✅ Same-day service available</li>
-            <li>✅ 3-month service guarantee</li>
-          </ul>
-          <a href="/contact" class="btn btn-primary">Get Home Inspection →</a>
+          <div class="res-com-header-row">
+            <div class="res-com-icon-wrap res-com-icon-wrap--home">🏠</div>
+            <div>
+              <h3 class="res-com-title">Residential Pest Control</h3>
+              <p class="res-com-subtitle">Safe &amp; Effective for Every Home</p>
+            </div>
+          </div>
+          <p class="res-com-desc">Protect your home and family with our targeted, eco-friendly pest treatments. Covering apartments, villas, bungalows &amp; societies in <%= sectionCity %>.</p>
+          <div class="res-com-features">
+            <div class="res-com-feature">
+              <span class="rcf-icon">🧒</span><span>Safe for children &amp; pets</span>
+            </div>
+            <div class="res-com-feature">
+              <span class="rcf-icon">🌿</span><span>Odourless eco-friendly treatments</span>
+            </div>
+            <div class="res-com-feature">
+              <span class="rcf-icon">📋</span><span>Annual Maintenance Contracts (AMC)</span>
+            </div>
+            <div class="res-com-feature">
+              <span class="rcf-icon">⚡</span><span>Same-day service available</span>
+            </div>
+            <div class="res-com-feature">
+              <span class="rcf-icon">🛡️</span><span>3-month service guarantee</span>
+            </div>
+          </div>
+          <div class="res-com-footer">
+            <a href="/contact" class="btn btn-primary btn-lg">Get Free Home Inspection →</a>
+            <div class="res-com-stat"><strong>50,000+</strong><span>Homes Protected</span></div>
+          </div>
         </div>
       </div>
 
       <!-- Commercial Card -->
-      <div class="res-com-card">
+      <div class="res-com-card res-com-card--biz">
         <div class="res-com-img-wrap">
-          <img src="/images/commercial-pest-control.png" alt="Commercial Pest Control in <%= sectionCity %>"
-            width="600" height="400" loading="lazy"
-            onerror="this.style.display='none'">
+          <img src="/images/commercial-pest-control.png" alt="Commercial Pest Control in <%= sectionCity %>" width="600" height="420" loading="lazy" onerror="this.style.display='none'">
+          <div class="res-com-img-overlay">
+            <span class="res-com-badge res-com-badge--biz">🏢 For Your Business</span>
+          </div>
         </div>
         <div class="res-com-body">
-          <div class="res-com-icon">🏢</div>
-          <h3 class="res-com-title">Commercial Pest Control</h3>
-          <p class="res-com-desc">Keep your business pest-free and compliant. We serve offices, restaurants, hotels, hospitals, warehouses, and factories in <%= sectionCity %> with industry-grade pest management programs.</p>
-          <ul class="res-com-features">
-            <li>✅ FSSAI & regulatory compliant</li>
-            <li>✅ Minimal business disruption</li>
-            <li>✅ Scheduled after-hours service</li>
-            <li>✅ Detailed service reports</li>
-            <li>✅ Dedicated account manager</li>
-          </ul>
-          <a href="/contact" class="btn btn-primary">Get Business Quote →</a>
+          <div class="res-com-header-row">
+            <div class="res-com-icon-wrap res-com-icon-wrap--biz">🏢</div>
+            <div>
+              <h3 class="res-com-title">Commercial Pest Control</h3>
+              <p class="res-com-subtitle">Industry-Grade Business Solutions</p>
+            </div>
+          </div>
+          <p class="res-com-desc">Keep your business pest-free &amp; compliant. We serve offices, restaurants, hotels, hospitals, warehouses &amp; factories in <%= sectionCity %>.</p>
+          <div class="res-com-features">
+            <div class="res-com-feature">
+              <span class="rcf-icon">✅</span><span>FSSAI &amp; regulatory compliant</span>
+            </div>
+            <div class="res-com-feature">
+              <span class="rcf-icon">🌙</span><span>After-hours scheduled service</span>
+            </div>
+            <div class="res-com-feature">
+              <span class="rcf-icon">📊</span><span>Detailed digital service reports</span>
+            </div>
+            <div class="res-com-feature">
+              <span class="rcf-icon">👨‍💼</span><span>Dedicated account manager</span>
+            </div>
+            <div class="res-com-feature">
+              <span class="rcf-icon">🏆</span><span>Trusted by 500+ businesses</span>
+            </div>
+          </div>
+          <div class="res-com-footer">
+            <a href="/contact" class="btn btn-secondary btn-lg">Get Business Quote →</a>
+            <div class="res-com-stat"><strong>500+</strong><span>Businesses Served</span></div>
+          </div>
         </div>
       </div>
 

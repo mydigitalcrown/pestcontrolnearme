@@ -1,26 +1,42 @@
 <!-- LOCATION SECTION COMPONENT -->
-<section class="location-section section-pad" aria-label="Our Service Locations">
-  <div class="container">
-    <div class="section-header text-center">
-      <p class="section-tag">Where We Serve</p>
-      <h2 class="section-title">Pest Control Services Across India</h2>
-      <p class="section-desc">Professional pest control in 55+ cities across India. Find expert pest management near you.</p>
-    </div>
-    <div class="location-grid">
-      <% locations.forEach(function(loc) { %>
-      <a href="/pest-control-in/<%= loc.slug %>" class="location-card" 
-        aria-label="Pest Control in <%= loc.name %>, <%= loc.state %>">
-        <div class="location-card-pin">📍</div>
-        <div class="location-card-info">
-          <h3 class="location-name"><%= loc.name %></h3>
-          <p class="location-state"><%= loc.state %></p>
-        </div>
-        <span class="location-arrow">→</span>
-      </a>
-      <% }); %>
-    </div>
-    <div class="text-center mt-4">
-      <a href="/locations" class="btn btn-primary">View All 55+ Locations</a>
+<section class="location-section" aria-label="Our Service Locations">
+  <div class="location-section-inner">
+    <div class="container">
+      <div class="section-header text-center">
+        <p class="section-tag section-tag--light">Where We Serve</p>
+        <h2 class="section-title" style="color:#fff">Pest Control Across India</h2>
+        <p class="section-desc" style="color:rgba(255,255,255,0.8)">Professional pest control in <strong style="color:#fff">55+ cities</strong> across India. Find expert pest management near you.</p>
+      </div>
+
+      <!-- Featured Cities -->
+      <div class="location-featured">
+        <% var featured = locations.slice(0,6); featured.forEach(function(loc){ %>
+        <a href="/pest-control-in/<%= loc.slug %>" class="location-featured-card">
+          <span class="lfc-pin">📍</span>
+          <span class="lfc-name"><%= loc.name %></span>
+          <span class="lfc-state"><%= loc.state %></span>
+        </a>
+        <% }); %>
+      </div>
+
+      <!-- All Cities Grid -->
+      <div class="location-grid">
+        <% locations.slice(6).forEach(function(loc) { %>
+        <a href="/pest-control-in/<%= loc.slug %>" class="location-card"
+          aria-label="Pest Control in <%= loc.name %>, <%= loc.state %>">
+          <span class="location-card-pin">📍</span>
+          <div class="location-card-info">
+            <h3 class="location-name"><%= loc.name %></h3>
+            <p class="location-state"><%= loc.state %></p>
+          </div>
+          <span class="location-arrow">→</span>
+        </a>
+        <% }); %>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="/locations" class="btn btn-outline-white btn-lg">View All 55+ Locations →</a>
+      </div>
     </div>
   </div>
 </section>
