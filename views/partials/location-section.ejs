@@ -8,28 +8,13 @@
         <p class="section-desc" style="color:rgba(255,255,255,0.8)">Professional pest control in <strong style="color:#fff">55+ cities</strong> across India. Find expert pest management near you.</p>
       </div>
 
-      <!-- Featured Cities -->
+      <!-- All Cities Grid -->
       <div class="location-featured">
-        <% var featured = locations.slice(0,6); featured.forEach(function(loc){ %>
+        <% locations.slice(0, 30).forEach(function(loc){ %>
         <a href="/pest-control-in/<%= loc.slug %>" class="location-featured-card">
           <span class="lfc-pin">📍</span>
           <span class="lfc-name"><%= loc.name %></span>
           <span class="lfc-state"><%= loc.state %></span>
-        </a>
-        <% }); %>
-      </div>
-
-      <!-- All Cities Grid -->
-      <div class="location-grid">
-        <% locations.slice(6, 30).forEach(function(loc) { %>
-        <a href="/pest-control-in/<%= loc.slug %>" class="location-card"
-          aria-label="Pest Control in <%= loc.name %>, <%= loc.state %>">
-          <span class="location-card-pin">📍</span>
-          <div class="location-card-info">
-            <h3 class="location-name"><%= loc.name %></h3>
-            <p class="location-state"><%= loc.state %></p>
-          </div>
-          <span class="location-arrow">→</span>
         </a>
         <% }); %>
       </div>
