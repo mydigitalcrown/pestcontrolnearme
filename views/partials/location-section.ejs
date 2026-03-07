@@ -21,7 +21,7 @@
 
       <!-- All Cities Grid -->
       <div class="location-grid">
-        <% locations.slice(6).forEach(function(loc) { %>
+        <% locations.slice(6, 30).forEach(function(loc) { %>
         <a href="/pest-control-in/<%= loc.slug %>" class="location-card"
           aria-label="Pest Control in <%= loc.name %>, <%= loc.state %>">
           <span class="location-card-pin">📍</span>
