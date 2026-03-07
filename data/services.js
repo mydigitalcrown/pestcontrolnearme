@@ -415,6 +415,117 @@ const services = [
     ]
   },
   {
+    slug: "dog-tick-control",
+    name: "Dog Tick Control",
+    shortDesc: "Professional dog tick treatment for pets and homes to eliminate ticks and prevent infestation.",
+    icon: "🐕",
+    heroTitle: "Dog Tick Control Services in Mumbai",
+    heroSubtitle: "Protect Your Pets & Home from Ticks – Safe & Effective Treatment",
+    metaTitle: "Dog Tick Control Services in Mumbai | Pet Tick Treatment Near Me",
+    metaDesc: "Professional dog tick control services in Mumbai. Safe tick treatment for pets and home environment. Protect your dogs and family from tick-borne diseases. Call now!",
+    keywords: "dog tick control mumbai, tick treatment for dogs mumbai, pet tick control near me",
+    content: `<p>Ticks are dangerous external parasites that attach to dogs and can spread serious diseases like Lyme disease, Ehrlichiosis, and Rocky Mountain spotted fever. Our professional dog tick control services in Mumbai provide comprehensive treatment for both your pets and home environment.</p>
+    <h3>Our Dog Tick Control Services</h3>
+    <ul>
+      <li>Home environment tick spray treatment</li>
+      <li>Yard and garden tick control</li>
+      <li>Kennel and pet area disinfection</li>
+      <li>Tick-proofing of entry points</li>
+      <li>Safe pet-friendly pesticide application</li>
+    </ul>
+    <h3>Why Tick Control is Important</h3>
+    <p>Ticks are not just a problem for your dog – they can easily transfer to humans and spread dangerous diseases. A single tick infestation in your home can lead to hundreds of ticks hiding in carpets, sofas, and bedding, putting your entire family at risk.</p>
+    <h3>Signs of Tick Infestation</h3>
+    <ul>
+      <li>Visible ticks on your dog's body</li>
+      <li>Dog scratching excessively</li>
+      <li>Small blood spots on bedding or furniture</li>
+      <li>Finding ticks on family members</li>
+    </ul>`,
+    faq: [
+      { q: "Is tick treatment safe for my dog?", a: "Yes, we use pet-safe formulations for environmental treatment. We advise keeping pets away during application and allowing surfaces to dry completely before pets return." },
+      { q: "How long does tick treatment take?", a: "A standard home tick treatment takes 1–2 hours. We treat all areas including carpets, sofas, pet bedding, corners and crevices." },
+      { q: "Do I need to treat my dog as well as my home?", a: "Yes, for complete tick elimination, your dog should be treated by a veterinarian simultaneously while we treat the home environment." },
+      { q: "How many sessions are needed for tick control?", a: "Usually 2 sessions are recommended – the first to kill adult ticks and a follow-up after 2 weeks to kill any newly hatched ticks." },
+      { q: "Can ticks infest my home even if I don't have pets?", a: "Yes, ticks can enter homes through humans, on clothing, or through rodents. However, infestation is far more common in homes with pets." }
+    ]
+  },
+  {
+    slug: "eco-friendly-pest-control",
+    name: "Eco-Friendly Pest Control",
+    shortDesc: "100% eco-friendly, non-toxic pest treatments safe for children, pets and the environment.",
+    icon: "🌿",
+    heroTitle: "Eco-Friendly Pest Control Services in Mumbai",
+    heroSubtitle: "Green Pest Control – Safe for Family, Pets & Planet",
+    metaTitle: "Eco-Friendly Pest Control Mumbai | Green Pest Treatment Near Me",
+    metaDesc: "Professional eco-friendly pest control services in Mumbai. 100% safe, non-toxic treatments for homes with children & pets. WHO-approved green products. Call now!",
+    keywords: "eco friendly pest control mumbai, green pest control mumbai, safe pest control near me",
+    content: `<p>Our eco-friendly pest control services use 100% natural, non-toxic, and biodegradable products to eliminate pests without harming your family, pets, or the environment. Ideal for homes with children, elderly, or sensitive individuals.</p>
+    <h3>Why Choose Eco-Friendly Pest Control?</h3>
+    <ul>
+      <li>No harmful chemical residues</li>
+      <li>Safe for children, infants, and elderly</li>
+      <li>Pet-safe formulations</li>
+      <li>Biodegradable and environmentally responsible</li>
+      <li>WHO and CIB approved green products</li>
+    </ul>
+    <h3>Our Eco-Friendly Treatment Methods</h3>
+    <ul>
+      <li>Herbal and botanical insecticides</li>
+      <li>Essential oil-based repellents</li>
+      <li>Diatomaceous earth treatments</li>
+      <li>Biological pest control agents</li>
+      <li>Heat treatment (chemical-free)</li>
+    </ul>
+    <h3>Pests We Treat Eco-Friendly</h3>
+    <p>Our green solutions effectively control cockroaches, ants, mosquitoes, bed bugs, rodents, silverfish, and many other common pests without compromising on effectiveness.</p>`,
+    faq: [
+      { q: "Are eco-friendly treatments as effective as chemical treatments?", a: "Yes, modern eco-friendly formulations are highly effective. They may require slightly more frequent application but are completely safe and long-lasting." },
+      { q: "Is eco-friendly pest control suitable for restaurants and food businesses?", a: "Absolutely. Our green treatments are FSSAI-compliant and safe for use in food handling areas, hotels, restaurants, and food processing units." },
+      { q: "How long do eco-friendly treatments last?", a: "Eco-friendly treatments typically last 1–3 months depending on the pest and environment. We recommend quarterly maintenance for best results." },
+      { q: "Are your eco-friendly products certified?", a: "Yes, all our eco-friendly products are WHO-approved, CIB registered, and comply with Indian pesticide regulations." },
+      { q: "Can I stay at home during eco-friendly treatment?", a: "Yes, in most cases you can remain at home during eco-friendly treatment. Our technician will advise based on the specific treatment applied." }
+    ]
+  },
+  {
+    slug: "herbal-pest-control",
+    name: "Herbal Pest Control",
+    shortDesc: "Natural herbal pest control treatments using plant-based formulations for safe, chemical-free pest elimination.",
+    icon: "🌱",
+    heroTitle: "Herbal Pest Control Services in Mumbai",
+    heroSubtitle: "100% Natural Herbal Treatment – No Chemicals, No Worries",
+    metaTitle: "Herbal Pest Control Services Mumbai | Natural Pest Treatment Near Me",
+    metaDesc: "Professional herbal pest control services in Mumbai. 100% natural plant-based treatments, chemical-free and safe for family and pets. Call now for free consultation!",
+    keywords: "herbal pest control mumbai, natural pest control mumbai, chemical free pest control near me",
+    content: `<p>Our herbal pest control services harness the power of nature to eliminate pests safely and effectively. Using plant-derived extracts, essential oils, and botanical compounds, we provide a completely chemical-free pest management solution.</p>
+    <h3>What is Herbal Pest Control?</h3>
+    <p>Herbal pest control uses extracts from plants like neem, pyrethrum, citronella, eucalyptus, lavender, and peppermint that are scientifically proven to repel and eliminate pests. These natural compounds are highly effective against pests while being completely safe for humans and beneficial insects.</p>
+    <h3>Benefits of Herbal Treatment</h3>
+    <ul>
+      <li>Zero synthetic chemicals</li>
+      <li>Safe for pregnant women and newborns</li>
+      <li>No strong odour or toxic fumes</li>
+      <li>Safe for pets and animals</li>
+      <li>Protects beneficial insects like bees</li>
+      <li>Sustainable and environmentally friendly</li>
+    </ul>
+    <h3>Common Herbal Ingredients We Use</h3>
+    <ul>
+      <li>Neem oil (Azadirachta indica) – broad-spectrum insecticide</li>
+      <li>Pyrethrum – derived from chrysanthemum flowers</li>
+      <li>Citronella – natural mosquito repellent</li>
+      <li>Peppermint oil – repels rodents, ants, spiders</li>
+      <li>Diatomaceous earth – natural insect killer</li>
+    </ul>`,
+    faq: [
+      { q: "Is herbal pest control as effective as regular pest control?", a: "For mild to moderate infestations, herbal treatments are very effective. For severe infestations, we may recommend a combination approach for best results." },
+      { q: "How often is herbal pest control needed?", a: "Herbal treatments work best with more frequent application – typically monthly or bi-monthly – due to their faster degradation compared to chemical alternatives." },
+      { q: "Is herbal pest control safe for organic farms and gardens?", a: "Yes, our herbal treatments are suitable for organic farming and gardening. They do not leave harmful residues in the soil or on produce." },
+      { q: "Can herbal pest control be used in hospitals and clinics?", a: "Yes, herbal pest control is highly recommended for healthcare facilities where chemical sensitivity is a concern." },
+      { q: "Do you provide herbal pest control AMC packages?", a: "Yes, we offer customized Annual Maintenance Contracts for herbal pest control with regular scheduled visits and emergency call service." }
+    ]
+  },
+  {
     slug: "general-pest-control",
     name: "General Pest Control",
     shortDesc: "Comprehensive pest management covering all common household & commercial pests.",
