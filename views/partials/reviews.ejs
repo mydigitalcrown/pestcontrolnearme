@@ -1,0 +1,69 @@
+<!-- REVIEWS SECTION COMPONENT -->
+<section class="reviews-section section-pad bg-light" aria-label="Customer Reviews">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">What Customers Say</p>
+      <h2 class="section-title">4.9 ★ Rating from 10,000+ Reviews</h2>
+      <p class="section-desc">Read what our satisfied customers say about our pest control services across India.</p>
+      <div class="overall-rating">
+        <div class="rating-score">
+          <span class="score-num">4.9</span>
+          <div class="stars">★★★★★</div>
+          <span class="score-label">Overall Rating</span>
+        </div>
+        <div class="rating-breakdown">
+          <div class="rating-bar"><span>5 ★</span><div class="bar"><div class="fill" style="width:88%"></div></div><span>88%</span></div>
+          <div class="rating-bar"><span>4 ★</span><div class="bar"><div class="fill" style="width:8%"></div></div><span>8%</span></div>
+          <div class="rating-bar"><span>3 ★</span><div class="bar"><div class="fill" style="width:3%"></div></div><span>3%</span></div>
+          <div class="rating-bar"><span>2 ★</span><div class="bar"><div class="fill" style="width:1%"></div></div><span>1%</span></div>
+          <div class="rating-bar"><span>1 ★</span><div class="bar"><div class="fill" style="width:0%"></div></div><span>0%</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="reviews-grid" itemscope itemtype="https://schema.org/ItemList">
+      <% var reviews = [
+        { name: 'Priya Sharma', city: 'Mumbai', rating: 5, date: '12 Jan 2026', service: 'Cockroach Control', text: 'Absolutely fantastic service! Our kitchen was infested with cockroaches for months. After PestControlNearMe\'s treatment, we haven\'t seen a single cockroach in 4 months. The technician was professional, punctual and very thorough. Highly recommend!', img: 'reviewer-1.jpg' },
+        { name: 'Rajesh Kumar', city: 'Delhi', rating: 5, date: '28 Feb 2026', service: 'Termite Control', text: 'Discovered termite damage in my antique wooden furniture. The team came same day and did a comprehensive treatment. Their post-construction termite treatment was very thorough. Excellent work and great value for money.', img: 'reviewer-2.jpg' },
+        { name: 'Anita Desai', city: 'Pune', rating: 5, date: '03 Jan 2026', service: 'Bed Bug Control', text: 'We were suffering from bed bug bites for weeks. Called PestControlNearMe and they responded within hours. The technician used heat treatment which completely eliminated all bed bugs. We sleep peacefully now!', img: 'reviewer-3.jpg' },
+        { name: 'Suresh Patel', city: 'Ahmedabad', rating: 5, date: '15 Jan 2026', service: 'Rodent Control', text: 'Rats were damaging our office electrical wiring. This team did an amazing job with bait stations and sealing entry points. No rat activity since treatment. Professional service at a very reasonable price.', img: 'reviewer-4.jpg' },
+        { name: 'Meena Iyer', city: 'Bangalore', rating: 5, date: '20 Feb 2026', service: 'Mosquito Control', text: 'Mosquito problem was unbearable in our society. PestControlNearMe treated the entire complex including breeding sites. The difference was noticeable immediately. Now we enjoy evenings on our terrace without mosquito troubles!', img: 'reviewer-5.jpg' },
+        { name: 'Vikram Singh', city: 'Hyderabad', rating: 4, date: '08 Feb 2026', service: 'Termite Control', text: 'Very professional service for termite control in my newly constructed home. The technician explained every step of the treatment process. Minor delay in scheduling but the treatment quality was excellent.', img: 'reviewer-6.jpg' }
+      ]; %>
+      <% reviews.forEach(function(review, i) { %>
+      <article class="review-card" itemscope itemtype="https://schema.org/Review" itemprop="itemListElement">
+        <div class="review-header">
+          <div class="reviewer-avatar">
+            <img src="/images/<%= review.img %>" alt="<%= review.name %>" width="56" height="56" loading="lazy"
+              onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 56 56\'%3E%3Ccircle cx=\'28\' cy=\'28\' r=\'28\' fill=\'%230ea5e9\'/%3E%3Ctext x=\'28\' y=\'35\' text-anchor=\'middle\' fill=\'white\' font-size=\'22\' font-family=\'Arial\'%3E<%= review.name.charAt(0) %>%3C/text%3E%3C/svg%3E'">
+          </div>
+          <div class="reviewer-info">
+            <strong class="reviewer-name" itemprop="author"><%= review.name %></strong>
+            <span class="reviewer-city">📍 <%= review.city %></span>
+          </div>
+          <div class="review-stars" aria-label="<%= review.rating %> out of 5 stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+            <meta itemprop="ratingValue" content="<%= review.rating %>">
+            <meta itemprop="bestRating" content="5">
+            <% for(var s=1; s<=5; s++) { %>
+            <span class="<%= s <= review.rating ? 'star-filled' : 'star-empty' %>">★</span>
+            <% } %>
+          </div>
+        </div>
+        <div class="review-service-tag"><%= review.service %></div>
+        <p class="review-text" itemprop="reviewBody">"<%= review.text %>"</p>
+        <footer class="review-footer">
+          <time class="review-date" datetime="<%= review.date %>"><%= review.date %></time>
+          <span class="review-verified">✅ Verified Customer</span>
+        </footer>
+      </article>
+      <% }); %>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="https://www.google.com/search?q=PestControlNearMe+reviews" 
+        target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+        Read All Google Reviews →
+      </a>
+    </div>
+  </div>
+</section>

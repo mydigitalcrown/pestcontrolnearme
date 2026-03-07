@@ -1,0 +1,43 @@
+<!-- CTA SECTION COMPONENT -->
+<% var ctaLoc = (typeof ctaLocation !== 'undefined' && ctaLocation) ? ctaLocation : (typeof heroLocation !== 'undefined' && heroLocation) ? heroLocation : 'Mumbai'; %>
+<% var ctaVariant = (typeof ctaVariant !== 'undefined') ? ctaVariant : 'primary'; %>
+<section class="cta-section cta-section--<%= ctaVariant %>" aria-label="Call to Action">
+  <div class="container cta-inner">
+    <div class="cta-text">
+      <h2 class="cta-title">
+        <% if (ctaVariant === 'secondary') { %>
+          Don't Let Pests Take Over – Act Now!
+        <% } else if (ctaVariant === 'tertiary') { %>
+          Ready for a Pest-Free <%= ctaLoc %>?
+        <% } else { %>
+          Get Pest-Free Today in <%= ctaLoc %>!
+        <% } %>
+      </h2>
+      <p class="cta-desc">
+        <% if (ctaVariant === 'secondary') { %>
+          Every day you wait, pests multiply. Our certified experts are ready 24/7 to protect your property.
+        <% } else { %>
+          Call India's most trusted pest control company. Free inspection, instant quote, same-day service available.
+        <% } %>
+      </p>
+      <div class="cta-guarantees">
+        <span>🛡️ 3-Month Guarantee</span>
+        <span>⚡ Same-Day Service</span>
+        <span>💰 Best Price Promise</span>
+        <span>🔬 Certified Technicians</span>
+      </div>
+    </div>
+    <div class="cta-actions">
+      <a href="tel:<%= phone.replace(/\s/g,'') %>" class="btn btn-white btn-lg">
+        📞 Call Now: <%= phone %>
+      </a>
+      <a href="/contact" class="btn btn-outline-white btn-lg">
+        📋 Get Free Quote
+      </a>
+      <a href="https://wa.me/91<%= phone.replace(/[^0-9]/g,'').slice(-10) %>" 
+        class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener noreferrer">
+        💬 WhatsApp
+      </a>
+    </div>
+  </div>
+</section>

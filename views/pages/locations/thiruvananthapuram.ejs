@@ -1,0 +1,222 @@
+<%
+/* ============================================================
+   LOCATION PAGE — Thiruvananthapuram, Kerala
+   URL: /pest-control-in/thiruvananthapuram
+   ============================================================ */
+locals.location = {
+  slug:       "thiruvananthapuram",
+  name:       "Thiruvananthapuram",
+  state:      "Kerala",
+  lat:        8.5241,
+  lng:        76.9366,
+  population: "9.6 Lakh",
+  mapEmbed:   "https://maps.google.com/maps?q=Thiruvananthapuram,Kerala&output=embed",
+  desc:       "Thiruvananthapuram's coastal Kerala climate creates year-round mosquito and termite challenges requiring expert management."
+};
+
+locals.page = {
+  title:       "Pest Control in Thiruvananthapuram | Best Pest Management Services Kerala",
+  metaDesc:    "Top-rated pest control in Thiruvananthapuram, Kerala. Cockroach, termite, mosquito, rodent & all pest services. Certified experts, same-day service, 3-month guarantee. Call now!",
+  keywords:    "pest control Thiruvananthapuram, pest management Thiruvananthapuram, cockroach control Thiruvananthapuram, termite control Thiruvananthapuram, mosquito control Thiruvananthapuram, rodent control Thiruvananthapuram",
+  canonical:   siteUrl + "/pest-control-in/thiruvananthapuram",
+  ogImage:     siteUrl + "/images/og-image.jpg",
+  heroTitle:   "Pest Control in Thiruvananthapuram",
+  heroSubtitle:"Professional pest management services for homes \u0026 businesses in Thiruvananthapuram, Kerala. Certified technicians, safe products, guaranteed results.",
+  breadcrumbs: [
+    { name: "Home",      url: "/" },
+    { name: "Locations", url: "/locations" },
+    { name: "Pest Control in Thiruvananthapuram", url: "/pest-control-in/thiruvananthapuram" }
+  ],
+  schema: {
+    "@context":    "https://schema.org",
+    "@type":       "LocalBusiness",
+    "name":        siteName + " – Thiruvananthapuram",
+    "description": "Top-rated pest control in Thiruvananthapuram, Kerala. Cockroach, termite, mosquito, rodent & all pest services. Certified experts, same-day service, 3-month guarantee. Call now!",
+    "url":         siteUrl + "/pest-control-in/thiruvananthapuram",
+    "telephone":   phone,
+    "address": {
+      "@type":           "PostalAddress",
+      "addressLocality": "Thiruvananthapuram",
+      "addressRegion":   "Kerala",
+      "addressCountry":  "IN"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 8.5241, "longitude": 76.9366 },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" }
+  },
+  faqSchema: {
+    "@context": "https://schema.org",
+    "@type":    "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is the best pest control company in Thiruvananthapuram?", "acceptedAnswer": { "@type": "Answer", "text": "PestControlNearMe is rated the #1 pest control company in Thiruvananthapuram with a 4.9-star rating, certified technicians, and a 3-month service guarantee." } },
+      { "@type": "Question", "name": "How much does pest control cost in Thiruvananthapuram?", "acceptedAnswer": { "@type": "Answer", "text": "Pest control costs in Thiruvananthapuram vary by service, property size, and infestation severity. Contact us for a free, no-obligation quote." } },
+      { "@type": "Question", "name": "Do you offer same-day pest control in Thiruvananthapuram?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, same-day pest control service is available in Thiruvananthapuram subject to technician availability. Call us for emergencies." } },
+      { "@type": "Question", "name": "Which areas of Thiruvananthapuram do you cover?", "acceptedAnswer": { "@type": "Answer", "text": "We cover all residential, commercial, and industrial areas across Thiruvananthapuram and its surrounding localities." } },
+      { "@type": "Question", "name": "Is your service safe for children and pets in Thiruvananthapuram?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. All treatments in Thiruvananthapuram use WHO-approved, government-certified, low-toxicity products that are safe for families, children, and pets." } }
+    ]
+  }
+};
+%>
+<%- include('../../partials/head') %>
+<%- include('../../partials/header') %>
+
+<%- include('../../partials/hero') %>
+
+<!-- Trust Bar -->
+<div class="trust-bar">
+  <div class="container trust-bar-inner">
+    <div class="trust-item"><strong>✅</strong><span>Certified Experts</span></div>
+    <div class="trust-item"><strong>⚡</strong><span>Same-Day Service</span></div>
+    <div class="trust-item"><strong>🛡️</strong><span>3-Month Guarantee</span></div>
+    <div class="trust-item"><strong>💰</strong><span>Best Price Promise</span></div>
+    <div class="trust-item"><strong>4.9 ★</strong><span>Rated in Thiruvananthapuram</span></div>
+  </div>
+</div>
+
+<!-- About Section -->
+<%- include('../../partials/about-section') %>
+
+<!-- Services in Thiruvananthapuram -->
+<section class="services-section section-pad bg-light" aria-label="Services in Thiruvananthapuram">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">Our Services</p>
+      <h2 class="section-title">Pest Control Services in Thiruvananthapuram</h2>
+      <p class="section-desc">Complete pest management for homes and businesses in Thiruvananthapuram, Kerala.</p>
+    </div>
+    <div class="services-grid">
+      <% services.forEach(function(svc) { %>
+      <article class="service-card" itemscope itemtype="https://schema.org/Service">
+        <div class="service-card-icon"><%= svc.icon %></div>
+        <div class="service-card-body">
+          <h3 class="service-card-title" itemprop="name"><%= svc.name %> in Thiruvananthapuram</h3>
+          <p class="service-card-desc" itemprop="description"><%= svc.shortDesc %></p>
+        </div>
+        <a href="/services/<%= svc.slug %>" class="service-card-link btn btn-outline" aria-label="<%= svc.name %> in Thiruvananthapuram">Know More →</a>
+      </article>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- CTA 1 -->
+<% locals.ctaVariant = 'primary'; locals.ctaLocation = 'Thiruvananthapuram'; %>
+<%- include('../../partials/cta') %>
+
+<!-- Location Content -->
+<section class="section-pad">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-main">
+        <h2>Pest Control in Thiruvananthapuram, Kerala</h2>
+        <p>Thiruvananthapuram's coastal Kerala climate creates year-round mosquito and termite challenges requiring expert management.</p>
+        <p>PestControlNearMe provides professional pest management services across all areas of Thiruvananthapuram. Our team of certified technicians is well-acquainted with the pest pressures specific to Thiruvananthapuram's climate, building types, and urban environment.</p>
+
+        <h3>Why Pest Control is Important in Thiruvananthapuram?</h3>
+        <p>With a population of approximately 9.6 Lakh, Thiruvananthapuram presents unique pest management challenges. Dense urban living, humid climate, and rapid construction activity create ideal conditions for cockroaches, termites, mosquitoes, rodents, and other pests to thrive.</p>
+
+        <h3>Areas We Serve in Thiruvananthapuram</h3>
+        <p>Our technicians serve all residential societies, commercial complexes, and industrial areas across Thiruvananthapuram and surrounding areas. Same-day service is available for most locations in the city.</p>
+
+        <h3>What Makes Our Service Different in Thiruvananthapuram?</h3>
+        <ul>
+          <li>Local experts with deep knowledge of Thiruvananthapuram's pest characteristics</li>
+          <li>Treatments customised for Thiruvananthapuram's specific climate and building types</li>
+          <li>Fast response – most bookings confirmed within 30 minutes</li>
+          <li>All services come with a 3-month guarantee</li>
+          <li>Transparent pricing – no hidden charges</li>
+        </ul>
+      </div>
+      <div>
+        <div class="why-choose-box">
+          <h3>Book Pest Control in Thiruvananthapuram</h3>
+          <%- include('../../partials/contact-form', { compact: true }) %>
+        </div>
+        <div class="why-choose-box" style="margin-top:1.5rem;">
+          <h3>Quick Info – Thiruvananthapuram</h3>
+          <ul class="why-list">
+            <li><span>🏙️</span> Thiruvananthapuram, Kerala</li>
+            <li><span>👥</span> Population: ~9.6 Lakh</li>
+            <li><span>⚡</span> Same-Day Service Available</li>
+            <li><span>🛡️</span> 3-Month Guarantee</li>
+            <li><span>💰</span> Best Price In Thiruvananthapuram</li>
+            <li><span>📞</span> 24/7 Emergency Support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA 2 -->
+<% ctaVariant = 'secondary'; ctaLocation = 'Thiruvananthapuram'; %>
+<%- include('../../partials/cta') %>
+
+<!-- FAQ -->
+<section class="faq-section section-pad" aria-label="FAQ">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">FAQs</p>
+      <h2 class="section-title">Pest Control in Thiruvananthapuram – Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-wrapper">
+      <% var locationFaqs = [
+        { q: 'What is the best pest control company in Thiruvananthapuram?', a: 'PestControlNearMe is rated the #1 pest control company in Thiruvananthapuram with a 4.9-star rating, 200+ certified technicians, and a 3-month service guarantee.' },
+        { q: 'How much does pest control cost in Thiruvananthapuram?', a: 'Pest control costs in Thiruvananthapuram depend on the type of service, property size, and severity of infestation. We offer transparent pricing. Contact us for a free quote.' },
+        { q: 'Do you provide same-day pest control service in Thiruvananthapuram?', a: 'Yes, we offer same-day pest control in Thiruvananthapuram for most treatments. Call us for emergency services.' },
+        { q: 'Which areas in Thiruvananthapuram do you cover?', a: 'We cover all areas across Thiruvananthapuram and surrounding regions including residential, commercial, and industrial zones.' },
+        { q: 'Is your pest control service safe for kids and pets in Thiruvananthapuram?', a: 'Yes! All treatments in Thiruvananthapuram use WHO-approved, government-certified, low-toxicity products that are safe for families, children, and pets.' },
+        { q: 'How do I book pest control in Thiruvananthapuram?', a: 'Call us, WhatsApp us, or fill the online form above. We confirm appointments in Thiruvananthapuram within 30 minutes.' }
+      ]; %>
+      <% locationFaqs.forEach(function(item, i) { %>
+      <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-<%= i %>" itemprop="name">
+          <span><%= item.q %></span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-<%= i %>" hidden itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text"><%= item.a %></p>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- Google Map -->
+<% locals.mapEmbedUrl = 'https://maps.google.com/maps?q=Thiruvananthapuram,Kerala&output=embed'; locals.mapLocation = 'Thiruvananthapuram'; %>
+<%- include('../../partials/google-map') %>
+
+<!-- CTA 3 -->
+<% ctaVariant = 'tertiary'; ctaLocation = 'Thiruvananthapuram'; %>
+<%- include('../../partials/cta') %>
+
+<!-- Nearby Locations -->
+<section class="section-pad bg-light">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">Nearby Services</p>
+      <h2 class="section-title">Pest Control in Nearby Cities</h2>
+    </div>
+    <div class="location-nearby">
+      <% locations.filter(function(l){ return l.slug !== 'thiruvananthapuram'; }).slice(0, 20).forEach(function(loc) { %>
+      <a href="/pest-control-in/<%= loc.slug %>" class="location-card">
+        <div class="location-card-pin">📍</div>
+        <div class="location-card-info">
+          <h3 class="location-name"><%= loc.name %></h3>
+          <p class="location-state"><%= loc.state %></p>
+        </div>
+        <span class="location-arrow">→</span>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<%- include('../../partials/clients') %>
+<%- include('../../partials/reviews') %>
+
+<!-- Final CTA -->
+<% ctaVariant = 'primary'; ctaLocation = 'Thiruvananthapuram'; %>
+<%- include('../../partials/cta') %>
+
+<%- include('../../partials/footer') %>

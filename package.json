@@ -1,0 +1,23 @@
+{
+  "name": "pestcontrolnearme",
+  "version": "1.0.0",
+  "description": "Professional Pest Control Services in Mumbai and across India",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["pest control", "mumbai", "india", "cockroach", "termite"],
+  "author": "PestControlNearMe",
+  "license": "MIT",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "ejs": "^3.1.10",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "sitemap": "^7.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

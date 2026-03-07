@@ -1,0 +1,65 @@
+<!-- CONTENT SECTION COMPONENT -->
+<% var contentLoc = (typeof contentLocation !== 'undefined' && contentLocation) ? contentLocation : (typeof heroLocation !== 'undefined' && heroLocation) ? heroLocation : 'Mumbai'; %>
+<section class="content-section section-pad bg-light" aria-label="Why Choose Us">
+  <div class="container">
+    <% if (typeof contentHtml !== 'undefined' && contentHtml) { %>
+    <!-- Custom content injected by page -->
+    <div class="rich-content">
+      <%- contentHtml %>
+    </div>
+    <% } else { %>
+    <!-- Default content -->
+    <div class="content-grid">
+      <div class="content-main">
+        <h2 class="section-title">Professional Pest Control Services in <%= contentLoc %></h2>
+        <p>PestControlNearMe is the #1 rated pest control company in <%= contentLoc %>, offering comprehensive pest management solutions for residential, commercial, and industrial properties. With over a decade of experience, our certified technicians eliminate all types of pests using the most advanced and eco-friendly methods.</p>
+        
+        <h3>Why Pest Control is Essential in <%= contentLoc %>?</h3>
+        <p>The climate in <%= contentLoc %> creates ideal breeding conditions for numerous pests including cockroaches, mosquitoes, rodents, and termites. Regular professional pest control is not just a matter of comfort – it is essential for the health and safety of your family, and the protection of your property investment.</p>
+        
+        <h3>Our Approach to Pest Control</h3>
+        <p>We follow an Integrated Pest Management (IPM) approach that combines:</p>
+        <ul>
+          <li><strong>Inspection:</strong> Thorough assessment of infestation extent and pest species</li>
+          <li><strong>Identification:</strong> Accurate pest identification for targeted treatment</li>
+          <li><strong>Treatment:</strong> Science-backed, environmentally responsible treatments</li>
+          <li><strong>Prevention:</strong> Exclusion and proofing measures to prevent re-infestation</li>
+          <li><strong>Monitoring:</strong> Follow-up visits to ensure complete control</li>
+        </ul>
+
+        <h3>Our Service Guarantee</h3>
+        <p>Every service we provide comes with a 3-month service guarantee. If pests return within the guarantee period, we will re-treat your property at absolutely no extra cost. Your satisfaction and peace of mind is our top priority.</p>
+      </div>
+      <div class="content-sidebar">
+        <div class="why-choose-box">
+          <h3>Why Choose PestControlNearMe?</h3>
+          <ul class="why-list">
+            <li><span>🏅</span> 10+ Years Industry Experience</li>
+            <li><span>👨‍🔬</span> 200+ Certified Technicians</li>
+            <li><span>🌿</span> Eco-Friendly Products</li>
+            <li><span>📋</span> Government Approved & Licensed</li>
+            <li><span>⚡</span> Same-Day Service Available</li>
+            <li><span>🛡️</span> 3-Month Service Guarantee</li>
+            <li><span>💰</span> Competitive & Transparent Pricing</li>
+            <li><span>📞</span> 24/7 Customer Support</li>
+            <li><span>⭐</span> 4.9 / 5 Average Rating</li>
+            <li><span>🔄</span> 50,000+ Happy Customers</li>
+          </ul>
+        </div>
+        <div class="quick-contact-box">
+          <h3>Quick Contact</h3>
+          <a href="tel:<%= phone.replace(/\s/g,'') %>" class="btn btn-primary full-width mb-2">
+            📞 <%= phone %>
+          </a>
+          <a href="tel:<%= phone2.replace(/\s/g,'') %>" class="btn btn-outline full-width mb-2">
+            📞 <%= phone2 %>
+          </a>
+          <a href="/contact" class="btn btn-secondary full-width">
+            📋 Get Free Quote
+          </a>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</section>

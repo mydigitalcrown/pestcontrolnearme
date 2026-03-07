@@ -1,0 +1,54 @@
+<!-- CONTACT FORM COMPONENT -->
+<% var isCompact = (typeof compact !== 'undefined' && compact); %>
+<form class="contact-form <%= isCompact ? 'contact-form--compact' : 'contact-form--full' %>" 
+  action="/contact" method="POST" novalidate>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="name<%= isCompact ? '-hero' : '' %>">Full Name *</label>
+      <input type="text" id="name<%= isCompact ? '-hero' : '' %>" name="name" 
+        placeholder="Your Full Name" required autocomplete="name"
+        aria-required="true">
+    </div>
+    <div class="form-group">
+      <label for="phone<%= isCompact ? '-hero' : '' %>">Phone Number *</label>
+      <input type="tel" id="phone<%= isCompact ? '-hero' : '' %>" name="phone" 
+        placeholder="+91 98765 43210" required autocomplete="tel"
+        pattern="[0-9]{10}" aria-required="true">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="email<%= isCompact ? '-hero' : '' %>">Email Address</label>
+      <input type="email" id="email<%= isCompact ? '-hero' : '' %>" name="email" 
+        placeholder="you@example.com" autocomplete="email">
+    </div>
+    <div class="form-group">
+      <label for="service<%= isCompact ? '-hero' : '' %>">Select Service *</label>
+      <select id="service<%= isCompact ? '-hero' : '' %>" name="service" required aria-required="true">
+        <option value="">Choose a Service</option>
+        <% services.forEach(function(svc) { %>
+        <option value="<%= svc.slug %>"><%= svc.icon %> <%= svc.name %></option>
+        <% }); %>
+        <option value="general">General Pest Inspection</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="city<%= isCompact ? '-hero' : '' %>">Your City *</label>
+    <input type="text" id="city<%= isCompact ? '-hero' : '' %>" name="city" 
+      placeholder="Enter your city" required aria-required="true">
+  </div>
+  <% if (!isCompact) { %>
+  <div class="form-group">
+    <label for="message">Additional Details</label>
+    <textarea id="message" name="message" rows="4" 
+      placeholder="Describe your pest problem (optional)"></textarea>
+  </div>
+  <% } %>
+  <button type="submit" class="btn btn-primary btn-submit full-width">
+    🚀 Get Free Inspection Now
+  </button>
+  <p class="form-disclaimer">
+    🔒 Your information is safe. We never share your data.
+  </p>
+</form>

@@ -1,0 +1,108 @@
+<header class="site-header" id="site-header">
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <a href="tel:<%= phone.replace(/\s/g,'') %>">📞 <%= phone %></a>
+        <a href="mailto:<%= email %>">✉️ <%= email %></a>
+      </div>
+      <div class="top-bar-right">
+        <span>⏰ Mon–Sun: 6:00 AM – 10:00 PM</span>
+        <a href="/contact" class="top-cta-btn">Free Inspection</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Nav -->
+  <nav class="main-nav" role="navigation" aria-label="Main Navigation">
+    <div class="container nav-inner">
+      <!-- Logo -->
+      <a href="/" class="logo" aria-label="PestControlNearMe Home">
+        <img src="/images/logo.png" alt="PestControlNearMe Logo" width="180" height="60" loading="eager"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <span class="logo-fallback">
+          <span class="logo-icon">🛡️</span>
+          <span class="logo-text">PestControl<span>NearMe</span></span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="/" class="<%= currentPath === '/' ? 'active' : '' %>" role="menuitem">Home</a></li>
+        <li role="none" class="has-dropdown">
+          <a href="/services" class="<%= currentPath.startsWith('/services') ? 'active' : '' %>" role="menuitem">
+            Services <span class="dropdown-arrow">▾</span>
+          </a>
+          <ul class="dropdown" role="menu">
+            <% services.slice(0, 8).forEach(function(svc) { %>
+            <li role="none"><a href="/services/<%= svc.slug %>" role="menuitem"><%= svc.icon %> <%= svc.name %></a></li>
+            <% }); %>
+            <li class="dropdown-divider" role="none"></li>
+            <li role="none"><a href="/services" class="view-all" role="menuitem">View All 16 Services →</a></li>
+          </ul>
+        </li>
+        <li role="none" class="has-dropdown">
+          <a href="/locations" class="<%= currentPath.startsWith('/pest-control-in') || currentPath === '/locations' ? 'active' : '' %>" role="menuitem">
+            Locations <span class="dropdown-arrow">▾</span>
+          </a>
+          <ul class="dropdown dropdown-locations" role="menu">
+            <% locations.slice(0, 12).forEach(function(loc) { %>
+            <li role="none"><a href="/pest-control-in/<%= loc.slug %>" role="menuitem">📍 <%= loc.name %></a></li>
+            <% }); %>
+            <li class="dropdown-divider" role="none"></li>
+            <li role="none"><a href="/locations" class="view-all" role="menuitem">View All 55+ Locations →</a></li>
+          </ul>
+        </li>
+        <li role="none"><a href="/about" class="<%= currentPath === '/about' ? 'active' : '' %>" role="menuitem">About</a></li>
+        <li role="none"><a href="/contact" class="<%= currentPath === '/contact' ? 'active' : '' %>" role="menuitem">Contact</a></li>
+      </ul>
+
+      <!-- CTA Button -->
+      <div class="nav-cta">
+        <a href="tel:<%= phone.replace(/\s/g,'') %>" class="btn btn-primary nav-call-btn">📞 Call Now</a>
+        <a href="/contact" class="btn btn-secondary">Get Free Quote</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <ul>
+        <li><a href="/">🏠 Home</a></li>
+        <li><a href="/services">🛠️ All Services</a></li>
+        <% services.forEach(function(svc) { %>
+        <li class="mobile-sub"><a href="/services/<%= svc.slug %>"><%= svc.icon %> <%= svc.name %></a></li>
+        <% }); %>
+        <li><a href="/locations">📍 All Locations</a></li>
+        <li><a href="/about">ℹ️ About Us</a></li>
+        <li><a href="/contact">📞 Contact Us</a></li>
+        <li class="mobile-cta"><a href="tel:<%= phone.replace(/\s/g,'') %>" class="btn btn-primary full-width">📞 Call Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <% if (typeof page !== 'undefined' && page.breadcrumbs && page.breadcrumbs.length > 1) { %>
+  <div class="breadcrumb-wrapper">
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+          <% page.breadcrumbs.forEach(function(crumb, i) { %>
+          <li class="breadcrumb-item <%= i === page.breadcrumbs.length - 1 ? 'active' : '' %>">
+            <% if (i < page.breadcrumbs.length - 1) { %>
+            <a href="<%= crumb.url %>"><%= crumb.name %></a>
+            <% } else { %>
+            <%= crumb.name %>
+            <% } %>
+          </li>
+          <% }); %>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <% } %>
+</header>

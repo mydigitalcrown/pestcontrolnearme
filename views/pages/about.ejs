@@ -1,0 +1,143 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<!-- Hero -->
+<section class="hero-section" aria-label="Hero">
+  <div class="hero-bg"><div class="hero-overlay"></div></div>
+  <div class="container hero-content" style="grid-template-columns:1fr 420px;">
+    <div class="hero-text">
+      <p class="hero-tagline">⭐ Learn About Our Company</p>
+      <h1 class="hero-title"><%= page.heroTitle %></h1>
+      <p class="hero-subtitle"><%= page.heroSubtitle %></p>
+      <div class="hero-cta-group">
+        <a href="tel:<%= phone.replace(/\s/g,'') %>" class="btn btn-primary btn-lg">📞 Call Us Now</a>
+        <a href="/contact" class="btn btn-outline-white btn-lg">📋 Get Free Quote</a>
+      </div>
+    </div>
+    <div class="hero-form-box">
+      <h2 class="form-box-title">Quick Enquiry</h2>
+      <p class="form-box-sub">We'll respond within 30 minutes!</p>
+      <%- include('../partials/contact-form', { compact: true }) %>
+    </div>
+  </div>
+</section>
+
+<!-- About Story -->
+<section class="about-section section-pad">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-col">
+        <div class="about-image-wrap">
+          <img src="/images/about-story.jpg" alt="PestControlNearMe team" width="580" height="440" loading="lazy"
+            onerror="this.style.display='none'">
+          <div class="about-badge-float">
+            <div class="float-badge">
+              <span class="badge-num">2014</span>
+              <span class="badge-label">Founded in Mumbai</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content-col">
+        <p class="section-tag">Our Story</p>
+        <h2 class="section-title">10+ Years Protecting Indian Homes & Businesses</h2>
+        <p>PestControlNearMe was founded in 2014 in Mumbai by a team of entomologists and pest management professionals who believed that pest control should be scientific, safe, and customer-centric.</p>
+        <p>Starting with just 5 technicians serving Mumbai, we have grown to a team of 200+ certified professionals across 55+ cities in India. Our journey has been driven by one mission: <strong>providing every Indian home and business a safe, pest-free environment.</strong></p>
+        <p>Today, we are one of India's most trusted pest control brands, having served over 50,000 satisfied customers across residential, commercial, and industrial sectors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Mission -->
+<section class="section-pad bg-light">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">Who We Are</p>
+      <h2 class="section-title">Our Mission, Vision & Values</h2>
+    </div>
+    <div class="about-features" style="grid-template-columns:repeat(3,1fr);gap:2rem;">
+      <div class="process-step">
+        <div class="step-icon">🎯</div>
+        <h3 class="step-title">Our Mission</h3>
+        <p class="step-desc">To protect every Indian home and business from pest threats using safe, effective, and affordable pest management solutions.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-icon">👁️</div>
+        <h3 class="step-title">Our Vision</h3>
+        <p class="step-desc">To become India's #1 pest control company by 2028, serving every city and town with world-class pest management services.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-icon">💎</div>
+        <h3 class="step-title">Our Values</h3>
+        <p class="step-desc">Safety first, scientific approach, transparency, customer satisfaction, and environmental responsibility in every service we provide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">Our Journey</p>
+      <h2 class="section-title">From Mumbai Startup to Pan-India Brand</h2>
+    </div>
+    <div class="timeline" style="max-width:700px;margin:0 auto;">
+      <div class="timeline-item">
+        <p class="timeline-year">2014</p>
+        <h3 class="timeline-title">Founded in Mumbai</h3>
+        <p class="timeline-desc">Started with 5 technicians and a vision to revolutionize pest control in India.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">2016</p>
+        <h3 class="timeline-title">Expanded to 5 Cities</h3>
+        <p class="timeline-desc">Expanded operations to Pune, Nashik, Nagpur, Thane, and Navi Mumbai.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">2018</p>
+        <h3 class="timeline-title">ISO 9001:2015 Certification</h3>
+        <p class="timeline-desc">Achieved ISO certification, confirming our commitment to quality management systems.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">2020</p>
+        <h3 class="timeline-title">20+ Cities Across India</h3>
+        <p class="timeline-desc">Crossed 20,000 satisfied customers and expanded to all major metros including Delhi, Bangalore, Hyderabad, and Chennai.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">2023</p>
+        <h3 class="timeline-title">Award-Winning Service</h3>
+        <p class="timeline-desc">Recognized as "Best Pest Control Service Provider Maharashtra 2023" at the India Business Awards.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">2026</p>
+        <h3 class="timeline-title">55+ Cities, 50,000+ Customers</h3>
+        <p class="timeline-desc">Now serving 55+ cities with 200+ certified technicians and a 4.9-star rating across all platforms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="trust-bar">
+  <div class="container trust-bar-inner">
+    <div class="trust-item"><strong>50,000+</strong><span>Customers Served</span></div>
+    <div class="trust-item"><strong>200+</strong><span>Certified Technicians</span></div>
+    <div class="trust-item"><strong>55+</strong><span>Cities Covered</span></div>
+    <div class="trust-item"><strong>16</strong><span>Pest Services</span></div>
+    <div class="trust-item"><strong>4.9 ★</strong><span>Avg. Rating</span></div>
+  </div>
+</div>
+
+<!-- CTA -->
+<% var ctaVariant = 'primary'; var ctaLocation = 'Mumbai'; %>
+<%- include('../partials/cta') %>
+
+<!-- Reviews -->
+<%- include('../partials/reviews') %>
+
+<!-- Final CTA -->
+<% ctaVariant = 'secondary'; %>
+<%- include('../partials/cta') %>
+
+<%- include('../partials/footer') %>

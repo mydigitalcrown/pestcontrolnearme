@@ -1,0 +1,101 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<!-- Hero -->
+<section class="hero-section" style="min-height:400px;" aria-label="Hero">
+  <div class="hero-bg"><div class="hero-overlay"></div></div>
+  <div class="container hero-content" style="grid-template-columns:1fr;min-height:400px;padding:3rem 24px;">
+    <div class="hero-text" style="text-align:center;align-items:center;">
+      <p class="hero-tagline">📞 Contact Us – Free Inspection</p>
+      <h1 class="hero-title" style="max-width:700px;margin:0 auto 1rem;"><%= page.heroTitle %></h1>
+      <p class="hero-subtitle"><%= page.heroSubtitle %></p>
+      <div class="hero-cta-group" style="justify-content:center;">
+        <a href="tel:<%= phone.replace(/\s/g,'') %>" class="btn btn-primary btn-lg">📞 <%= phone %></a>
+        <a href="https://wa.me/91<%= phone.replace(/[^0-9]/g,'').slice(-10) %>" class="btn btn-whatsapp btn-lg" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Content -->
+<section class="section-pad">
+  <div class="container">
+    <% if (typeof query !== 'undefined' && query.success) { %>
+    <div style="background:#dcfce7;border:2px solid #22c55e;border-radius:12px;padding:1.5rem;text-align:center;margin-bottom:2rem;color:#166534;font-weight:600;">
+      ✅ Thank you for contacting us! We will reach out within 30 minutes.
+    </div>
+    <% } %>
+    <div class="contact-page-grid">
+      <!-- Form -->
+      <div>
+        <h2 class="section-title" style="margin-bottom:1.5rem;">Send Us a Message</h2>
+        <%- include('../partials/contact-form', { compact: false }) %>
+      </div>
+      <!-- Info -->
+      <div>
+        <div class="contact-info-card">
+          <h2 class="section-title" style="margin-bottom:1.5rem;">Contact Information</h2>
+          <div class="contact-info-item">
+            <span class="contact-info-icon">📞</span>
+            <div>
+              <strong>Phone Numbers</strong>
+              <p><a href="tel:<%= phone.replace(/\s/g,'') %>"><%= phone %></a></p>
+              <p><a href="tel:<%= phone2.replace(/\s/g,'') %>"><%= phone2 %></a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-icon">✉️</span>
+            <div>
+              <strong>Email Address</strong>
+              <p><a href="mailto:<%= email %>"><%= email %></a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-icon">📍</span>
+            <div>
+              <strong>Head Office</strong>
+              <p>Mumbai, Maharashtra – 400001, India</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-icon">⏰</span>
+            <div>
+              <strong>Working Hours</strong>
+              <p>Monday – Sunday: 6:00 AM – 10:00 PM</p>
+              <p>Emergency services available 24/7</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-icon">💬</span>
+            <div>
+              <strong>WhatsApp</strong>
+              <p><a href="https://wa.me/91<%= phone.replace(/[^0-9]/g,'').slice(-10) %>" target="_blank">Chat with us on WhatsApp</a></p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--sky-50);border:2px solid var(--sky-100);border-radius:16px;padding:1.5rem;">
+          <h3 style="font-family:'Lora',serif;font-size:1.1rem;margin-bottom:.75rem;">Why Call Us?</h3>
+          <ul style="display:flex;flex-direction:column;gap:.65rem;">
+            <li style="font-size:.9rem;color:var(--gray-600);">⚡ Instant quote within 30 minutes</li>
+            <li style="font-size:.9rem;color:var(--gray-600);">🔍 Free pest inspection</li>
+            <li style="font-size:.9rem;color:var(--gray-600);">⏰ Same-day service available</li>
+            <li style="font-size:.9rem;color:var(--gray-600);">💰 No hidden charges</li>
+            <li style="font-size:.9rem;color:var(--gray-600);">🛡️ 3-month service guarantee</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map -->
+<%- include('../partials/google-map') %>
+
+<!-- FAQ -->
+<%- include('../partials/faq-section') %>
+
+<!-- CTA -->
+<% var ctaVariant = 'primary'; var ctaLocation = 'Mumbai'; %>
+<%- include('../partials/cta') %>
+
+<%- include('../partials/footer') %>

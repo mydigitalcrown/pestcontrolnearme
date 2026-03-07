@@ -1,0 +1,125 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<%- include('../partials/hero') %>
+
+<!-- Trust Bar -->
+<div class="trust-bar">
+  <div class="container trust-bar-inner">
+    <div class="trust-item"><strong>✅</strong><span>Safe & Odourless</span></div>
+    <div class="trust-item"><strong>⚡</strong><span>Same-Day Service</span></div>
+    <div class="trust-item"><strong>🛡️</strong><span>3-Month Guarantee</span></div>
+    <div class="trust-item"><strong>👨‍🔬</strong><span>Certified Experts</span></div>
+    <div class="trust-item"><strong>4.9 ★</strong><span>Customer Rating</span></div>
+  </div>
+</div>
+
+<!-- Service Content -->
+<section class="section-pad" aria-label="Service Details">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-main rich-content">
+        <h2>Professional <%= service.name %> Services in Mumbai</h2>
+        <%- service.content %>
+
+        <!-- Related Services -->
+        <h3>Other Pest Control Services We Offer</h3>
+        <div class="services-grid" style="grid-template-columns:repeat(3,1fr);margin-top:1rem;">
+          <% services.filter(s => s.slug !== service.slug).slice(0,6).forEach(function(svc) { %>
+          <a href="/services/<%= svc.slug %>" class="service-card" style="text-decoration:none;">
+            <div class="service-card-icon"><%= svc.icon %></div>
+            <h3 class="service-card-title" style="font-size:.92rem;"><%= svc.name %></h3>
+          </a>
+          <% }); %>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div>
+        <!-- Quick Contact -->
+        <div class="why-choose-box" style="margin-bottom:1.5rem;">
+          <h3>Book <%= service.name %> Now</h3>
+          <%- include('../partials/contact-form', { compact: true }) %>
+        </div>
+
+        <!-- Why Choose -->
+        <div class="why-choose-box">
+          <h3>Why Choose Us for <%= service.name %>?</h3>
+          <ul class="why-list">
+            <li><span>🔬</span> Advanced treatment methods</li>
+            <li><span>🌿</span> WHO-approved, eco-friendly products</li>
+            <li><span>👨‍🔬</span> Certified, trained technicians</li>
+            <li><span>⚡</span> Same-day service available</li>
+            <li><span>🛡️</span> 3-month service guarantee</li>
+            <li><span>💰</span> Transparent competitive pricing</li>
+            <li><span>📞</span> 24/7 customer support</li>
+            <li><span>📋</span> Govt. approved & licensed</li>
+          </ul>
+        </div>
+
+        <!-- Other Services -->
+        <div class="why-choose-box" style="margin-top:1.5rem;">
+          <h3>All Pest Services</h3>
+          <ul class="why-list">
+            <% services.forEach(function(svc) { %>
+            <li><a href="/services/<%= svc.slug %>" style="color:var(--primary);font-weight:500;"><span><%= svc.icon %></span> <%= svc.name %></a></li>
+            <% }); %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<% var ctaVariant = 'primary'; var ctaLocation = 'Mumbai'; %>
+<%- include('../partials/cta') %>
+
+<!-- Location section for this service -->
+<%- include('../partials/location-section') %>
+
+<!-- CTA -->
+<% ctaVariant = 'secondary'; %>
+<%- include('../partials/cta') %>
+
+<!-- FAQ Section with service-specific FAQs -->
+<section class="faq-section section-pad" aria-label="Frequently Asked Questions">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">FAQs</p>
+      <h2 class="section-title"><%= service.name %> – Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-wrapper">
+      <% service.faq.forEach(function(item, i) { %>
+      <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-<%= i %>" itemprop="name">
+          <span><%= item.q %></span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-<%= i %>" hidden itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text"><%= item.a %></p>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- Google Map -->
+<%- include('../partials/google-map') %>
+
+<!-- CTA -->
+<% ctaVariant = 'tertiary'; %>
+<%- include('../partials/cta') %>
+
+<!-- Clients -->
+<%- include('../partials/clients') %>
+
+<!-- Reviews -->
+<%- include('../partials/reviews') %>
+
+<!-- Final CTA -->
+<% ctaVariant = 'primary'; %>
+<%- include('../partials/cta') %>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,36 @@
+<!-- FAQ SECTION COMPONENT -->
+<% var faqLoc = (typeof faqLocation !== 'undefined' && faqLocation) ? faqLocation : (typeof heroLocation !== 'undefined' && heroLocation) ? heroLocation : 'Mumbai'; %>
+<section class="faq-section section-pad" aria-label="Frequently Asked Questions">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">FAQs</p>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-desc">Get answers to common questions about pest control services in <%= faqLoc %>.</p>
+    </div>
+    <div class="faq-wrapper">
+      <% var faqItems = (typeof faqs !== 'undefined' && faqs && faqs.length > 0) ? faqs : [
+        { q: 'How much does pest control cost in ' + faqLoc + '?', a: 'Pest control costs in ' + faqLoc + ' depend on the type of pest, property size, and treatment method. We offer transparent pricing with no hidden charges. Contact us for a free, customized quote.' },
+        { q: 'Is pest control safe for my family and pets?', a: 'Yes, all our treatments use WHO-approved, government-certified chemicals that are safe for humans and pets when applied by our trained technicians. We follow strict safety protocols.' },
+        { q: 'How long does a pest control treatment take?', a: 'Treatment duration varies by service type and property size. Most standard residential treatments take 30–90 minutes. Our technician will inform you beforehand.' },
+        { q: 'Do you provide a service guarantee?', a: 'Yes, we provide a 3-month service guarantee on all treatments. If pests return within the guarantee period, we will re-treat at no extra cost.' },
+        { q: 'Do I need to leave my home during treatment?', a: 'For most treatments, you do not need to vacate. However, for certain treatments like fumigation or fogging, we may request you stay away for a few hours.' },
+        { q: 'How often should I get pest control done?', a: 'For most homes, quarterly treatments are recommended. High-risk properties or those with severe infestations may benefit from monthly service.' },
+        { q: 'Are your technicians certified and trained?', a: 'Absolutely. All our pest control technicians hold valid government-issued licenses and undergo regular training on the latest pest management techniques and safety protocols.' },
+        { q: 'Do you provide pest control for commercial properties?', a: 'Yes, we offer specialized commercial pest control programs for offices, restaurants, hotels, hospitals, warehouses, and all types of commercial establishments.' }
+      ]; %>
+      <% faqItems.forEach(function(item, i) { %>
+      <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+        <button class="faq-question" aria-expanded="false" 
+          aria-controls="faq-ans-<%= i %>" itemprop="name">
+          <span><%= item.q %></span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-ans-<%= i %>" hidden 
+          itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text"><%= item.a %></p>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,222 @@
+<%
+/* ============================================================
+   LOCATION PAGE — Agra, Uttar Pradesh
+   URL: /pest-control-in/agra
+   ============================================================ */
+locals.location = {
+  slug:       "agra",
+  name:       "Agra",
+  state:      "Uttar Pradesh",
+  lat:        27.1767,
+  lng:        78.0081,
+  population: "19 Lakh",
+  mapEmbed:   "https://maps.google.com/maps?q=Agra,Uttar Pradesh&output=embed",
+  desc:       "Home to the Taj Mahal, Agra's heritage properties and hotels require premium pest control services to protect their prestige."
+};
+
+locals.page = {
+  title:       "Pest Control in Agra | Best Pest Management Services Uttar Pradesh",
+  metaDesc:    "Top-rated pest control in Agra, Uttar Pradesh. Cockroach, termite, mosquito, rodent & all pest services. Certified experts, same-day service, 3-month guarantee. Call now!",
+  keywords:    "pest control Agra, pest management Agra, cockroach control Agra, termite control Agra, mosquito control Agra, rodent control Agra",
+  canonical:   siteUrl + "/pest-control-in/agra",
+  ogImage:     siteUrl + "/images/og-image.jpg",
+  heroTitle:   "Pest Control in Agra",
+  heroSubtitle:"Professional pest management services for homes \u0026 businesses in Agra, Uttar Pradesh. Certified technicians, safe products, guaranteed results.",
+  breadcrumbs: [
+    { name: "Home",      url: "/" },
+    { name: "Locations", url: "/locations" },
+    { name: "Pest Control in Agra", url: "/pest-control-in/agra" }
+  ],
+  schema: {
+    "@context":    "https://schema.org",
+    "@type":       "LocalBusiness",
+    "name":        siteName + " – Agra",
+    "description": "Top-rated pest control in Agra, Uttar Pradesh. Cockroach, termite, mosquito, rodent & all pest services. Certified experts, same-day service, 3-month guarantee. Call now!",
+    "url":         siteUrl + "/pest-control-in/agra",
+    "telephone":   phone,
+    "address": {
+      "@type":           "PostalAddress",
+      "addressLocality": "Agra",
+      "addressRegion":   "Uttar Pradesh",
+      "addressCountry":  "IN"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 27.1767, "longitude": 78.0081 },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" }
+  },
+  faqSchema: {
+    "@context": "https://schema.org",
+    "@type":    "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is the best pest control company in Agra?", "acceptedAnswer": { "@type": "Answer", "text": "PestControlNearMe is rated the #1 pest control company in Agra with a 4.9-star rating, certified technicians, and a 3-month service guarantee." } },
+      { "@type": "Question", "name": "How much does pest control cost in Agra?", "acceptedAnswer": { "@type": "Answer", "text": "Pest control costs in Agra vary by service, property size, and infestation severity. Contact us for a free, no-obligation quote." } },
+      { "@type": "Question", "name": "Do you offer same-day pest control in Agra?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, same-day pest control service is available in Agra subject to technician availability. Call us for emergencies." } },
+      { "@type": "Question", "name": "Which areas of Agra do you cover?", "acceptedAnswer": { "@type": "Answer", "text": "We cover all residential, commercial, and industrial areas across Agra and its surrounding localities." } },
+      { "@type": "Question", "name": "Is your service safe for children and pets in Agra?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. All treatments in Agra use WHO-approved, government-certified, low-toxicity products that are safe for families, children, and pets." } }
+    ]
+  }
+};
+%>
+<%- include('../../partials/head') %>
+<%- include('../../partials/header') %>
+
+<%- include('../../partials/hero') %>
+
+<!-- Trust Bar -->
+<div class="trust-bar">
+  <div class="container trust-bar-inner">
+    <div class="trust-item"><strong>✅</strong><span>Certified Experts</span></div>
+    <div class="trust-item"><strong>⚡</strong><span>Same-Day Service</span></div>
+    <div class="trust-item"><strong>🛡️</strong><span>3-Month Guarantee</span></div>
+    <div class="trust-item"><strong>💰</strong><span>Best Price Promise</span></div>
+    <div class="trust-item"><strong>4.9 ★</strong><span>Rated in Agra</span></div>
+  </div>
+</div>
+
+<!-- About Section -->
+<%- include('../../partials/about-section') %>
+
+<!-- Services in Agra -->
+<section class="services-section section-pad bg-light" aria-label="Services in Agra">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">Our Services</p>
+      <h2 class="section-title">Pest Control Services in Agra</h2>
+      <p class="section-desc">Complete pest management for homes and businesses in Agra, Uttar Pradesh.</p>
+    </div>
+    <div class="services-grid">
+      <% services.forEach(function(svc) { %>
+      <article class="service-card" itemscope itemtype="https://schema.org/Service">
+        <div class="service-card-icon"><%= svc.icon %></div>
+        <div class="service-card-body">
+          <h3 class="service-card-title" itemprop="name"><%= svc.name %> in Agra</h3>
+          <p class="service-card-desc" itemprop="description"><%= svc.shortDesc %></p>
+        </div>
+        <a href="/services/<%= svc.slug %>" class="service-card-link btn btn-outline" aria-label="<%= svc.name %> in Agra">Know More →</a>
+      </article>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- CTA 1 -->
+<% locals.ctaVariant = 'primary'; locals.ctaLocation = 'Agra'; %>
+<%- include('../../partials/cta') %>
+
+<!-- Location Content -->
+<section class="section-pad">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-main">
+        <h2>Pest Control in Agra, Uttar Pradesh</h2>
+        <p>Home to the Taj Mahal, Agra's heritage properties and hotels require premium pest control services to protect their prestige.</p>
+        <p>PestControlNearMe provides professional pest management services across all areas of Agra. Our team of certified technicians is well-acquainted with the pest pressures specific to Agra's climate, building types, and urban environment.</p>
+
+        <h3>Why Pest Control is Important in Agra?</h3>
+        <p>With a population of approximately 19 Lakh, Agra presents unique pest management challenges. Dense urban living, humid climate, and rapid construction activity create ideal conditions for cockroaches, termites, mosquitoes, rodents, and other pests to thrive.</p>
+
+        <h3>Areas We Serve in Agra</h3>
+        <p>Our technicians serve all residential societies, commercial complexes, and industrial areas across Agra and surrounding areas. Same-day service is available for most locations in the city.</p>
+
+        <h3>What Makes Our Service Different in Agra?</h3>
+        <ul>
+          <li>Local experts with deep knowledge of Agra's pest characteristics</li>
+          <li>Treatments customised for Agra's specific climate and building types</li>
+          <li>Fast response – most bookings confirmed within 30 minutes</li>
+          <li>All services come with a 3-month guarantee</li>
+          <li>Transparent pricing – no hidden charges</li>
+        </ul>
+      </div>
+      <div>
+        <div class="why-choose-box">
+          <h3>Book Pest Control in Agra</h3>
+          <%- include('../../partials/contact-form', { compact: true }) %>
+        </div>
+        <div class="why-choose-box" style="margin-top:1.5rem;">
+          <h3>Quick Info – Agra</h3>
+          <ul class="why-list">
+            <li><span>🏙️</span> Agra, Uttar Pradesh</li>
+            <li><span>👥</span> Population: ~19 Lakh</li>
+            <li><span>⚡</span> Same-Day Service Available</li>
+            <li><span>🛡️</span> 3-Month Guarantee</li>
+            <li><span>💰</span> Best Price In Agra</li>
+            <li><span>📞</span> 24/7 Emergency Support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA 2 -->
+<% ctaVariant = 'secondary'; ctaLocation = 'Agra'; %>
+<%- include('../../partials/cta') %>
+
+<!-- FAQ -->
+<section class="faq-section section-pad" aria-label="FAQ">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">FAQs</p>
+      <h2 class="section-title">Pest Control in Agra – Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-wrapper">
+      <% var locationFaqs = [
+        { q: 'What is the best pest control company in Agra?', a: 'PestControlNearMe is rated the #1 pest control company in Agra with a 4.9-star rating, 200+ certified technicians, and a 3-month service guarantee.' },
+        { q: 'How much does pest control cost in Agra?', a: 'Pest control costs in Agra depend on the type of service, property size, and severity of infestation. We offer transparent pricing. Contact us for a free quote.' },
+        { q: 'Do you provide same-day pest control service in Agra?', a: 'Yes, we offer same-day pest control in Agra for most treatments. Call us for emergency services.' },
+        { q: 'Which areas in Agra do you cover?', a: 'We cover all areas across Agra and surrounding regions including residential, commercial, and industrial zones.' },
+        { q: 'Is your pest control service safe for kids and pets in Agra?', a: 'Yes! All treatments in Agra use WHO-approved, government-certified, low-toxicity products that are safe for families, children, and pets.' },
+        { q: 'How do I book pest control in Agra?', a: 'Call us, WhatsApp us, or fill the online form above. We confirm appointments in Agra within 30 minutes.' }
+      ]; %>
+      <% locationFaqs.forEach(function(item, i) { %>
+      <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-<%= i %>" itemprop="name">
+          <span><%= item.q %></span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-<%= i %>" hidden itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text"><%= item.a %></p>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- Google Map -->
+<% locals.mapEmbedUrl = 'https://maps.google.com/maps?q=Agra,Uttar Pradesh&output=embed'; locals.mapLocation = 'Agra'; %>
+<%- include('../../partials/google-map') %>
+
+<!-- CTA 3 -->
+<% ctaVariant = 'tertiary'; ctaLocation = 'Agra'; %>
+<%- include('../../partials/cta') %>
+
+<!-- Nearby Locations -->
+<section class="section-pad bg-light">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">Nearby Services</p>
+      <h2 class="section-title">Pest Control in Nearby Cities</h2>
+    </div>
+    <div class="location-nearby">
+      <% locations.filter(function(l){ return l.slug !== 'agra'; }).slice(0, 20).forEach(function(loc) { %>
+      <a href="/pest-control-in/<%= loc.slug %>" class="location-card">
+        <div class="location-card-pin">📍</div>
+        <div class="location-card-info">
+          <h3 class="location-name"><%= loc.name %></h3>
+          <p class="location-state"><%= loc.state %></p>
+        </div>
+        <span class="location-arrow">→</span>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<%- include('../../partials/clients') %>
+<%- include('../../partials/reviews') %>
+
+<!-- Final CTA -->
+<% ctaVariant = 'primary'; ctaLocation = 'Agra'; %>
+<%- include('../../partials/cta') %>
+
+<%- include('../../partials/footer') %>

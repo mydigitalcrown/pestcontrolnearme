@@ -1,0 +1,50 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<main class="error-page">
+  <div class="container error-page-inner">
+    <div class="error-num">404</div>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-desc">Sorry, the page you are looking for doesn't exist or has been moved. Let us help you find what you need.</p>
+
+    <div class="error-cta-group">
+      <a href="/" class="btn btn-primary btn-lg">🏠 Back to Home</a>
+      <a href="/services" class="btn btn-outline btn-lg">🛡️ Our Services</a>
+      <a href="/contact" class="btn btn-outline btn-lg">📞 Contact Us</a>
+    </div>
+
+    <div class="error-links">
+      <h2>Popular Pages</h2>
+      <div class="error-popular-grid">
+        <a href="/services/cockroach-control">🪳 Cockroach Control</a>
+        <a href="/services/termite-control">🐛 Termite Control</a>
+        <a href="/services/mosquito-control">🦟 Mosquito Control</a>
+        <a href="/services/rodent-control">🐀 Rodent Control</a>
+        <a href="/services/bed-bug-control">🛏️ Bed Bug Control</a>
+        <a href="/services/general-pest-control">🏠 General Pest Control</a>
+        <a href="/pest-control-in/mumbai">📍 Pest Control Mumbai</a>
+        <a href="/pest-control-in/delhi">📍 Pest Control Delhi</a>
+        <a href="/pest-control-in/bangalore">📍 Pest Control Bangalore</a>
+        <a href="/locations">📍 All Locations</a>
+        <a href="/about">🏢 About Us</a>
+        <a href="/contact">📋 Free Quote</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<style>
+.error-page{min-height:70vh;display:flex;align-items:center;padding:4rem 0;}
+.error-page-inner{text-align:center;max-width:700px;}
+.error-num{font-size:clamp(5rem,20vw,10rem);font-weight:900;color:var(--primary);line-height:1;font-family:var(--font-serif);}
+.error-title{font-size:2rem;margin:.5rem 0 1rem;color:var(--gray-900);}
+.error-desc{font-size:1.1rem;color:var(--gray-600);margin-bottom:2rem;line-height:1.7;}
+.error-cta-group{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-bottom:3rem;}
+.error-links h2{font-size:1.25rem;margin-bottom:1.5rem;color:var(--gray-700);}
+.error-popular-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;}
+.error-popular-grid a{padding:.75rem 1rem;border:1px solid var(--primary-light);border-radius:.5rem;color:var(--primary-dark);text-decoration:none;font-size:.9rem;transition:background .2s,color .2s;}
+.error-popular-grid a:hover{background:var(--primary);color:#fff;}
+@media(max-width:480px){.error-cta-group{flex-direction:column;align-items:center;} .error-popular-grid{grid-template-columns:1fr 1fr;}}
+</style>
+
+<%- include('../partials/footer') %>

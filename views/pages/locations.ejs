@@ -1,0 +1,92 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<!-- Hero -->
+<section class="hero-section" style="min-height:420px;" aria-label="Hero">
+  <div class="hero-bg"><div class="hero-overlay"></div></div>
+  <div class="container hero-content" style="grid-template-columns:1fr 420px;min-height:420px;padding:3rem 24px;">
+    <div class="hero-text">
+      <p class="hero-tagline">📍 Serving 55+ Cities Across India</p>
+      <h1 class="hero-title"><%= page.heroTitle %></h1>
+      <p class="hero-subtitle"><%= page.heroSubtitle %></p>
+      <div class="hero-cta-group">
+        <a href="tel:<%= phone.replace(/\s/g,'') %>" class="btn btn-primary btn-lg">📞 Call Now</a>
+        <a href="/contact" class="btn btn-outline-white btn-lg">📋 Get Free Quote</a>
+      </div>
+    </div>
+    <div class="hero-form-box">
+      <h2 class="form-box-title">Find Pest Control Near You</h2>
+      <p class="form-box-sub">We serve 55+ cities across India!</p>
+      <%- include('../partials/contact-form', { compact: true }) %>
+    </div>
+  </div>
+</section>
+
+<!-- All Locations -->
+<section class="section-pad" aria-label="All Locations">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">55+ Cities</p>
+      <h2 class="section-title">Pest Control Services Across India</h2>
+      <p class="section-desc">Find professional pest management near you. Click your city to see local services, pricing, and booking options.</p>
+    </div>
+    <div class="location-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));">
+      <% locations.forEach(function(loc) { %>
+      <a href="/pest-control-in/<%= loc.slug %>" class="location-card" 
+        aria-label="Pest Control in <%= loc.name %>, <%= loc.state %>"
+        itemscope itemtype="https://schema.org/LocalBusiness">
+        <div class="location-card-pin">📍</div>
+        <div class="location-card-info">
+          <h2 class="location-name" itemprop="name" style="font-size:.9rem;">Pest Control in <%= loc.name %></h2>
+          <p class="location-state" itemprop="addressRegion"><%= loc.state %></p>
+        </div>
+        <span class="location-arrow">→</span>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<% var ctaVariant = 'primary'; var ctaLocation = 'India'; %>
+<%- include('../partials/cta') %>
+
+<!-- Location Content -->
+<section class="section-pad bg-light">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-main">
+        <h2>Pan-India Professional Pest Control Services</h2>
+        <p>PestControlNearMe is India's leading multi-city pest management company. We provide consistent, high-quality pest control services in all major cities and towns across India, from Mumbai to Chennai, Delhi to Bangalore, and everywhere in between.</p>
+        
+        <h3>Our Coverage Across India</h3>
+        <p>We operate in 55+ cities spanning all major states of India. Our distributed network of certified technicians ensures fast response times and local expertise in every city we serve.</p>
+        
+        <h3>Consistent Quality Across All Cities</h3>
+        <p>Regardless of which city you are in, you can expect the same standard of service from PestControlNearMe:</p>
+        <ul>
+          <li>Certified and uniformed pest control technicians</li>
+          <li>Government-approved, eco-friendly products</li>
+          <li>Standardized procedures and quality checks</li>
+          <li>3-month service guarantee across all locations</li>
+          <li>Transparent pricing with no hidden charges</li>
+        </ul>
+      </div>
+      <div>
+        <div class="why-choose-box">
+          <h3>Find Pest Control in Your City</h3>
+          <%- include('../partials/contact-form', { compact: true }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<%- include('../partials/faq-section') %>
+
+<!-- Final CTA -->
+<% ctaVariant = 'secondary'; %>
+<%- include('../partials/cta') %>
+
+<%- include('../partials/footer') %>

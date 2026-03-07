@@ -1,0 +1,96 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<%- include('../partials/hero') %>
+
+<!-- Trust Bar -->
+<div class="trust-bar">
+  <div class="container trust-bar-inner">
+    <div class="trust-item"><strong>50,000+</strong><span>Happy Customers</span></div>
+    <div class="trust-item"><strong>10+</strong><span>Years Experience</span></div>
+    <div class="trust-item"><strong>200+</strong><span>Certified Technicians</span></div>
+    <div class="trust-item"><strong>55+</strong><span>Cities Served</span></div>
+    <div class="trust-item"><strong>4.9 ★</strong><span>Customer Rating</span></div>
+  </div>
+</div>
+
+<!-- About Section -->
+<%- include('../partials/about-section') %>
+
+<!-- Services Section -->
+<%- include('../partials/services-section') %>
+
+<!-- CTA 1 -->
+<% var ctaVariant = 'primary'; var ctaLocation = 'Mumbai'; %>
+<%- include('../partials/cta') %>
+
+<!-- Location Section -->
+<%- include('../partials/location-section') %>
+
+<!-- CTA 2 -->
+<% ctaVariant = 'secondary'; %>
+<%- include('../partials/cta') %>
+
+<!-- How We Work Process -->
+<section class="process-section section-pad">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">Our Process</p>
+      <h2 class="section-title">How Our Pest Control Works</h2>
+      <p class="section-desc">A simple, transparent 4-step process to make your property pest-free.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <div class="step-icon">📞</div>
+        <h3 class="step-title">Book Appointment</h3>
+        <p class="step-desc">Call us or fill our online form. Get a free consultation and instant quote within 30 minutes.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <div class="step-icon">🔍</div>
+        <h3 class="step-title">Free Inspection</h3>
+        <p class="step-desc">Our certified technician visits your property for a thorough pest inspection and risk assessment.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <div class="step-icon">🔬</div>
+        <h3 class="step-title">Professional Treatment</h3>
+        <p class="step-desc">We apply targeted, eco-friendly treatments using advanced pest management techniques.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <div class="step-icon">🛡️</div>
+        <h3 class="step-title">3-Month Guarantee</h3>
+        <p class="step-desc">Enjoy pest-free living backed by our 3-month service guarantee. We return if pests do!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Content Section -->
+<% var contentHtml = null; %>
+<%- include('../partials/content-section') %>
+
+<!-- FAQ Section -->
+<% var faqs = null; %>
+<%- include('../partials/faq-section') %>
+
+<!-- Google Map Section -->
+<%- include('../partials/google-map') %>
+
+<!-- CTA 3 -->
+<% ctaVariant = 'tertiary'; %>
+<%- include('../partials/cta') %>
+
+<!-- Clients -->
+<%- include('../partials/clients') %>
+
+<!-- Reviews -->
+<%- include('../partials/reviews') %>
+
+<!-- Final CTA -->
+<% ctaVariant = 'primary'; %>
+<%- include('../partials/cta') %>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,61 @@
+<!-- HERO SECTION -->
+<section class="hero-section" aria-label="Hero">
+  <div class="hero-bg">
+    <img src="/images/hero-bg.jpg" alt="Pest Control Services in <%= page.heroLocation %>" 
+      width="1920" height="700" loading="eager" fetchpriority="high"
+      onerror="this.style.display='none';">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="container hero-content">
+    <div class="hero-text">
+      <p class="hero-tagline">⭐ India's Most Trusted Pest Control Company</p>
+      <h1 class="hero-title"><%= page.heroTitle %></h1>
+      <p class="hero-subtitle"><%= page.heroSubtitle %></p>
+      
+      <div class="hero-badges">
+        <span class="badge">✅ 100% Safe & Odourless</span>
+        <span class="badge">✅ Same-Day Service</span>
+        <span class="badge">✅ 3-Month Guarantee</span>
+        <span class="badge">✅ Government Certified</span>
+      </div>
+
+      <div class="hero-cta-group">
+        <a href="tel:<%= phone.replace(/\s/g,'') %>" class="btn btn-primary btn-lg">
+          📞 Call Now: <%= phone %>
+        </a>
+        <a href="#contact-form" class="btn btn-outline-white btn-lg">
+          📋 Get Free Quote
+        </a>
+        <a href="https://wa.me/91<%= phone.replace(/[^0-9]/g,'').slice(-10) %>" 
+          class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+          💬 WhatsApp Us
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <strong>10+</strong>
+          <span>Years Experience</span>
+        </div>
+        <div class="stat">
+          <strong>50,000+</strong>
+          <span>Happy Customers</span>
+        </div>
+        <div class="stat">
+          <strong>16</strong>
+          <span>Pest Services</span>
+        </div>
+        <div class="stat">
+          <strong>55+</strong>
+          <span>Cities Served</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-form-box" id="contact-form">
+      <h2 class="form-box-title">Get Free Inspection</h2>
+      <p class="form-box-sub">Response within 30 minutes!</p>
+      <%- include('contact-form', { compact: true }) %>
+    </div>
+  </div>
+</section>

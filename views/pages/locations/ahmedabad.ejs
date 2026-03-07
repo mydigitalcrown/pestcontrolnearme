@@ -1,0 +1,222 @@
+<%
+/* ============================================================
+   LOCATION PAGE — Ahmedabad, Gujarat
+   URL: /pest-control-in/ahmedabad
+   ============================================================ */
+locals.location = {
+  slug:       "ahmedabad",
+  name:       "Ahmedabad",
+  state:      "Gujarat",
+  lat:        23.0225,
+  lng:        72.5714,
+  population: "80 Lakh",
+  mapEmbed:   "https://maps.google.com/maps?q=Ahmedabad,Gujarat&output=embed",
+  desc:       "Ahmedabad's dry, hot climate is particularly conducive to termite infestations in wooden structures and furniture."
+};
+
+locals.page = {
+  title:       "Pest Control in Ahmedabad | Best Pest Management Services Gujarat",
+  metaDesc:    "Top-rated pest control in Ahmedabad, Gujarat. Cockroach, termite, mosquito, rodent & all pest services. Certified experts, same-day service, 3-month guarantee. Call now!",
+  keywords:    "pest control Ahmedabad, pest management Ahmedabad, cockroach control Ahmedabad, termite control Ahmedabad, mosquito control Ahmedabad, rodent control Ahmedabad",
+  canonical:   siteUrl + "/pest-control-in/ahmedabad",
+  ogImage:     siteUrl + "/images/og-image.jpg",
+  heroTitle:   "Pest Control in Ahmedabad",
+  heroSubtitle:"Professional pest management services for homes \u0026 businesses in Ahmedabad, Gujarat. Certified technicians, safe products, guaranteed results.",
+  breadcrumbs: [
+    { name: "Home",      url: "/" },
+    { name: "Locations", url: "/locations" },
+    { name: "Pest Control in Ahmedabad", url: "/pest-control-in/ahmedabad" }
+  ],
+  schema: {
+    "@context":    "https://schema.org",
+    "@type":       "LocalBusiness",
+    "name":        siteName + " – Ahmedabad",
+    "description": "Top-rated pest control in Ahmedabad, Gujarat. Cockroach, termite, mosquito, rodent & all pest services. Certified experts, same-day service, 3-month guarantee. Call now!",
+    "url":         siteUrl + "/pest-control-in/ahmedabad",
+    "telephone":   phone,
+    "address": {
+      "@type":           "PostalAddress",
+      "addressLocality": "Ahmedabad",
+      "addressRegion":   "Gujarat",
+      "addressCountry":  "IN"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 23.0225, "longitude": 72.5714 },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" }
+  },
+  faqSchema: {
+    "@context": "https://schema.org",
+    "@type":    "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is the best pest control company in Ahmedabad?", "acceptedAnswer": { "@type": "Answer", "text": "PestControlNearMe is rated the #1 pest control company in Ahmedabad with a 4.9-star rating, certified technicians, and a 3-month service guarantee." } },
+      { "@type": "Question", "name": "How much does pest control cost in Ahmedabad?", "acceptedAnswer": { "@type": "Answer", "text": "Pest control costs in Ahmedabad vary by service, property size, and infestation severity. Contact us for a free, no-obligation quote." } },
+      { "@type": "Question", "name": "Do you offer same-day pest control in Ahmedabad?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, same-day pest control service is available in Ahmedabad subject to technician availability. Call us for emergencies." } },
+      { "@type": "Question", "name": "Which areas of Ahmedabad do you cover?", "acceptedAnswer": { "@type": "Answer", "text": "We cover all residential, commercial, and industrial areas across Ahmedabad and its surrounding localities." } },
+      { "@type": "Question", "name": "Is your service safe for children and pets in Ahmedabad?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. All treatments in Ahmedabad use WHO-approved, government-certified, low-toxicity products that are safe for families, children, and pets." } }
+    ]
+  }
+};
+%>
+<%- include('../../partials/head') %>
+<%- include('../../partials/header') %>
+
+<%- include('../../partials/hero') %>
+
+<!-- Trust Bar -->
+<div class="trust-bar">
+  <div class="container trust-bar-inner">
+    <div class="trust-item"><strong>✅</strong><span>Certified Experts</span></div>
+    <div class="trust-item"><strong>⚡</strong><span>Same-Day Service</span></div>
+    <div class="trust-item"><strong>🛡️</strong><span>3-Month Guarantee</span></div>
+    <div class="trust-item"><strong>💰</strong><span>Best Price Promise</span></div>
+    <div class="trust-item"><strong>4.9 ★</strong><span>Rated in Ahmedabad</span></div>
+  </div>
+</div>
+
+<!-- About Section -->
+<%- include('../../partials/about-section') %>
+
+<!-- Services in Ahmedabad -->
+<section class="services-section section-pad bg-light" aria-label="Services in Ahmedabad">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">Our Services</p>
+      <h2 class="section-title">Pest Control Services in Ahmedabad</h2>
+      <p class="section-desc">Complete pest management for homes and businesses in Ahmedabad, Gujarat.</p>
+    </div>
+    <div class="services-grid">
+      <% services.forEach(function(svc) { %>
+      <article class="service-card" itemscope itemtype="https://schema.org/Service">
+        <div class="service-card-icon"><%= svc.icon %></div>
+        <div class="service-card-body">
+          <h3 class="service-card-title" itemprop="name"><%= svc.name %> in Ahmedabad</h3>
+          <p class="service-card-desc" itemprop="description"><%= svc.shortDesc %></p>
+        </div>
+        <a href="/services/<%= svc.slug %>" class="service-card-link btn btn-outline" aria-label="<%= svc.name %> in Ahmedabad">Know More →</a>
+      </article>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- CTA 1 -->
+<% locals.ctaVariant = 'primary'; locals.ctaLocation = 'Ahmedabad'; %>
+<%- include('../../partials/cta') %>
+
+<!-- Location Content -->
+<section class="section-pad">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-main">
+        <h2>Pest Control in Ahmedabad, Gujarat</h2>
+        <p>Ahmedabad's dry, hot climate is particularly conducive to termite infestations in wooden structures and furniture.</p>
+        <p>PestControlNearMe provides professional pest management services across all areas of Ahmedabad. Our team of certified technicians is well-acquainted with the pest pressures specific to Ahmedabad's climate, building types, and urban environment.</p>
+
+        <h3>Why Pest Control is Important in Ahmedabad?</h3>
+        <p>With a population of approximately 80 Lakh, Ahmedabad presents unique pest management challenges. Dense urban living, humid climate, and rapid construction activity create ideal conditions for cockroaches, termites, mosquitoes, rodents, and other pests to thrive.</p>
+
+        <h3>Areas We Serve in Ahmedabad</h3>
+        <p>Our technicians serve all residential societies, commercial complexes, and industrial areas across Ahmedabad and surrounding areas. Same-day service is available for most locations in the city.</p>
+
+        <h3>What Makes Our Service Different in Ahmedabad?</h3>
+        <ul>
+          <li>Local experts with deep knowledge of Ahmedabad's pest characteristics</li>
+          <li>Treatments customised for Ahmedabad's specific climate and building types</li>
+          <li>Fast response – most bookings confirmed within 30 minutes</li>
+          <li>All services come with a 3-month guarantee</li>
+          <li>Transparent pricing – no hidden charges</li>
+        </ul>
+      </div>
+      <div>
+        <div class="why-choose-box">
+          <h3>Book Pest Control in Ahmedabad</h3>
+          <%- include('../../partials/contact-form', { compact: true }) %>
+        </div>
+        <div class="why-choose-box" style="margin-top:1.5rem;">
+          <h3>Quick Info – Ahmedabad</h3>
+          <ul class="why-list">
+            <li><span>🏙️</span> Ahmedabad, Gujarat</li>
+            <li><span>👥</span> Population: ~80 Lakh</li>
+            <li><span>⚡</span> Same-Day Service Available</li>
+            <li><span>🛡️</span> 3-Month Guarantee</li>
+            <li><span>💰</span> Best Price In Ahmedabad</li>
+            <li><span>📞</span> 24/7 Emergency Support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA 2 -->
+<% ctaVariant = 'secondary'; ctaLocation = 'Ahmedabad'; %>
+<%- include('../../partials/cta') %>
+
+<!-- FAQ -->
+<section class="faq-section section-pad" aria-label="FAQ">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">FAQs</p>
+      <h2 class="section-title">Pest Control in Ahmedabad – Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-wrapper">
+      <% var locationFaqs = [
+        { q: 'What is the best pest control company in Ahmedabad?', a: 'PestControlNearMe is rated the #1 pest control company in Ahmedabad with a 4.9-star rating, 200+ certified technicians, and a 3-month service guarantee.' },
+        { q: 'How much does pest control cost in Ahmedabad?', a: 'Pest control costs in Ahmedabad depend on the type of service, property size, and severity of infestation. We offer transparent pricing. Contact us for a free quote.' },
+        { q: 'Do you provide same-day pest control service in Ahmedabad?', a: 'Yes, we offer same-day pest control in Ahmedabad for most treatments. Call us for emergency services.' },
+        { q: 'Which areas in Ahmedabad do you cover?', a: 'We cover all areas across Ahmedabad and surrounding regions including residential, commercial, and industrial zones.' },
+        { q: 'Is your pest control service safe for kids and pets in Ahmedabad?', a: 'Yes! All treatments in Ahmedabad use WHO-approved, government-certified, low-toxicity products that are safe for families, children, and pets.' },
+        { q: 'How do I book pest control in Ahmedabad?', a: 'Call us, WhatsApp us, or fill the online form above. We confirm appointments in Ahmedabad within 30 minutes.' }
+      ]; %>
+      <% locationFaqs.forEach(function(item, i) { %>
+      <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-<%= i %>" itemprop="name">
+          <span><%= item.q %></span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-<%= i %>" hidden itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text"><%= item.a %></p>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- Google Map -->
+<% locals.mapEmbedUrl = 'https://maps.google.com/maps?q=Ahmedabad,Gujarat&output=embed'; locals.mapLocation = 'Ahmedabad'; %>
+<%- include('../../partials/google-map') %>
+
+<!-- CTA 3 -->
+<% ctaVariant = 'tertiary'; ctaLocation = 'Ahmedabad'; %>
+<%- include('../../partials/cta') %>
+
+<!-- Nearby Locations -->
+<section class="section-pad bg-light">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">Nearby Services</p>
+      <h2 class="section-title">Pest Control in Nearby Cities</h2>
+    </div>
+    <div class="location-nearby">
+      <% locations.filter(function(l){ return l.slug !== 'ahmedabad'; }).slice(0, 20).forEach(function(loc) { %>
+      <a href="/pest-control-in/<%= loc.slug %>" class="location-card">
+        <div class="location-card-pin">📍</div>
+        <div class="location-card-info">
+          <h3 class="location-name"><%= loc.name %></h3>
+          <p class="location-state"><%= loc.state %></p>
+        </div>
+        <span class="location-arrow">→</span>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<%- include('../../partials/clients') %>
+<%- include('../../partials/reviews') %>
+
+<!-- Final CTA -->
+<% ctaVariant = 'primary'; ctaLocation = 'Ahmedabad'; %>
+<%- include('../../partials/cta') %>
+
+<%- include('../../partials/footer') %>

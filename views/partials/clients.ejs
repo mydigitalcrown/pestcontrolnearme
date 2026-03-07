@@ -1,0 +1,62 @@
+<!-- CLIENTS / PARTNERS SECTION -->
+<section class="clients-section section-pad" aria-label="Our Clients">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag">Trusted By</p>
+      <h2 class="section-title">50,000+ Satisfied Customers & Partners</h2>
+      <p class="section-desc">From residential homes to Fortune 500 companies – they all trust PestControlNearMe.</p>
+    </div>
+    
+    <!-- Client Type Tags -->
+    <div class="client-types">
+      <div class="client-type-card">
+        <span class="client-type-icon">🏠</span>
+        <h3>Residential</h3>
+        <p>Apartments, Villas, Bungalows</p>
+      </div>
+      <div class="client-type-card">
+        <span class="client-type-icon">🏢</span>
+        <h3>Commercial</h3>
+        <p>Offices, IT Parks, Malls</p>
+      </div>
+      <div class="client-type-card">
+        <span class="client-type-icon">🍽️</span>
+        <h3>Hospitality</h3>
+        <p>Hotels, Restaurants, Cafes</p>
+      </div>
+      <div class="client-type-card">
+        <span class="client-type-icon">🏥</span>
+        <h3>Healthcare</h3>
+        <p>Hospitals, Clinics, Pharma</p>
+      </div>
+      <div class="client-type-card">
+        <span class="client-type-icon">🏭</span>
+        <h3>Industrial</h3>
+        <p>Factories, Warehouses, Plants</p>
+      </div>
+      <div class="client-type-card">
+        <span class="client-type-icon">🏫</span>
+        <h3>Institutions</h3>
+        <p>Schools, Colleges, Govt. Buildings</p>
+      </div>
+    </div>
+
+    <!-- Client Logos -->
+    <div class="clients-logos-marquee">
+      <div class="clients-logos-track">
+        <% var clientNames = ['StarBazaar', 'HUL', 'HDFC Bank', 'Tata Group', 'Marriott', 'ITC Hotels', 'Godrej', 'Reliance', 'BigBazaar', 'ICICI Bank', 'Lodha Group', 'Hiranandani']; %>
+        <% clientNames.forEach(function(client) { %>
+        <div class="client-logo-item">
+          <span class="client-logo-placeholder"><%= client %></span>
+        </div>
+        <% }); %>
+        <!-- Duplicate for seamless scroll -->
+        <% clientNames.forEach(function(client) { %>
+        <div class="client-logo-item" aria-hidden="true">
+          <span class="client-logo-placeholder"><%= client %></span>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</section>
