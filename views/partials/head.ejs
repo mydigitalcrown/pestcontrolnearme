@@ -4,52 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
+
   <!-- Primary Meta Tags -->
   <title><%= page.title %></title>
   <meta name="description" content="<%= page.metaDesc %>">
   <meta name="keywords" content="<%= page.keywords || '' %>">
+  <% if (page.noindex) { %>
+  <meta name="robots" content="noindex, nofollow">
+  <% } else { %>
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <% } %>
   <meta name="author" content="PestControlNearMe">
-  
+  <meta name="publisher" content="PestControlNearMe">
+  <meta name="language" content="en-IN">
+  <meta name="revisit-after" content="7 days">
+  <meta name="rating" content="general">
+
+  <!-- Geo Tags for Local SEO -->
+  <% if (typeof page.geoRegion !== 'undefined') { %>
+  <meta name="geo.region" content="<%= page.geoRegion %>">
+  <% } else { %>
+  <meta name="geo.region" content="IN-MH">
+  <% } %>
+  <% if (typeof page.geoPlacename !== 'undefined') { %>
+  <meta name="geo.placename" content="<%= page.geoPlacename %>">
+  <% } %>
+
   <!-- Canonical -->
   <link rel="canonical" href="<%= page.canonical || siteUrl + currentPath %>">
-  
+
   <!-- Open Graph -->
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="<%= page.ogType || 'website' %>">
   <meta property="og:title" content="<%= page.ogTitle || page.title %>">
   <meta property="og:description" content="<%= page.ogDesc || page.metaDesc %>">
   <meta property="og:url" content="<%= page.canonical || siteUrl + currentPath %>">
   <meta property="og:site_name" content="PestControlNearMe">
-  <meta property="og:image" content="<%= siteUrl %>/images/og-image.jpg">
+  <meta property="og:image" content="<%= page.ogImage || siteUrl + '/images/og-image.jpg' %>">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PestControlNearMe - Professional Pest Control Services in India">
   <meta property="og:locale" content="en_IN">
-  
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="<%= page.ogTitle || page.title %>">
   <meta name="twitter:description" content="<%= page.ogDesc || page.metaDesc %>">
-  <meta name="twitter:image" content="<%= siteUrl %>/images/og-image.jpg">
-  
+  <meta name="twitter:image" content="<%= page.ogImage || siteUrl + '/images/og-image.jpg' %>">
+  <meta name="twitter:image:alt" content="PestControlNearMe - Professional Pest Control Services in India">
+
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  
+
   <!-- Google Fonts – Lora -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+
   <!-- CSS -->
   <link rel="stylesheet" href="/css/style.css">
-  
-  <!-- Schema Markup -->
-  <% if (page.schema) { %>
-  <script type="application/ld+json"><%-  page.schema %></script>
+
+  <!-- WebSite Schema (Sitelinks Search Box) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "PestControlNearMe",
+    "url": "<%= siteUrl %>",
+    "description": "India's most trusted pest control company. Professional pest management services across 55+ cities.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "PestControlNearMe",
+      "url": "<%= siteUrl %>",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "<%= siteUrl %>/images/logo.png",
+        "width": 180,
+        "height": 60
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9453394533",
+        "contactType": "customer service",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "sameAs": []
+    }
+  }
+  </script>
+
+  <!-- Page Schema Markup -->
+  <%
+    // Auto-stringify schema if it's an object (location pages pass objects, other pages pass strings)
+    var schemaStr = '';
+    if (page.schema) {
+      schemaStr = (typeof page.schema === 'string') ? page.schema : JSON.stringify(page.schema);
+    }
+    var faqSchemaStr = '';
+    if (page.faqSchema) {
+      faqSchemaStr = (typeof page.faqSchema === 'string') ? page.faqSchema : JSON.stringify(page.faqSchema);
+    }
+  %>
+  <% if (schemaStr) { %>
+  <script type="application/ld+json"><%- schemaStr %></script>
   <% } %>
-  <% if (page.faqSchema) { %>
-  <script type="application/ld+json"><%-  page.faqSchema %></script>
+  <% if (faqSchemaStr) { %>
+  <script type="application/ld+json"><%- faqSchemaStr %></script>
   <% } %>
 
   <!-- BreadcrumbList Schema -->
