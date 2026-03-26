@@ -46,7 +46,7 @@ app.use((req, res, next) => {
   res.locals.services = services;
   res.locals.locations = locations;
   res.locals.siteName = "PestControlNearMe";
-  res.locals.siteUrl = "https://www.pestcontrolnearme.in";
+  res.locals.siteUrl = "https://pestcontrolnearme.co";
   res.locals.phone = "+91 94533 94533";
   res.locals.phone2 = "+91 94533 94533";
   res.locals.email = "jitendra.gupta700@gmail.com";
@@ -79,7 +79,7 @@ app.get('/', (req, res) => {
     title: "Best Pest Control Services in Mumbai | #1 Pest Control Near Me",
     metaDesc: "Mumbai's most trusted pest control company. Professional cockroach, termite, mosquito, rodent & bed bug control. Same-day service | 3-month guarantee | Free inspection. Call now!",
     keywords: "pest control mumbai, pest control near me, best pest control service mumbai, cockroach control mumbai, termite control mumbai, mosquito control mumbai, rodent control mumbai, bed bug control mumbai",
-    canonical: "https://www.pestcontrolnearme.in/",
+    canonical: "https://pestcontrolnearme.co/",
     ogTitle: "Best Pest Control Services in Mumbai | PestControlNearMe",
     ogDesc: "Mumbai's most trusted pest control company. Professional services for all pests. Same-day service & 3-month guarantee.",
     heroTitle: "Mumbai's #1 Pest Control Service",
@@ -91,8 +91,8 @@ app.get('/', (req, res) => {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "PestControlNearMe",
-      "@id": "https://www.pestcontrolnearme.in",
-      "url": "https://www.pestcontrolnearme.in",
+      "@id": "https://pestcontrolnearme.co",
+      "url": "https://pestcontrolnearme.co",
       "telephone": "+91-9453394533",
       "email": "jitendra.gupta700@gmail.com",
       "address": {
@@ -113,7 +113,7 @@ app.get('/', (req, res) => {
         }
       ],
       "priceRange": "₹₹",
-      "image": "https://www.pestcontrolnearme.in/images/logo.png",
+      "image": "https://pestcontrolnearme.co/images/logo.png",
       "description": "Mumbai's most trusted pest control company offering professional pest management services for homes and businesses.",
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -134,7 +134,7 @@ app.get('/', (req, res) => {
           "itemOffered": {
             "@type": "Service",
             "name": s.name,
-            "url": "https://www.pestcontrolnearme.in/services/" + s.slug
+            "url": "https://pestcontrolnearme.co/services/" + s.slug
           }
         }))
       }
@@ -152,7 +152,7 @@ app.get('/about', (req, res) => {
     title: "About PestControlNearMe | Best Pest Control Company in Mumbai",
     metaDesc: "Learn about PestControlNearMe – Mumbai's leading pest management company. 10+ years experience, 50,000+ satisfied customers, certified technicians. ISO 9001:2015 certified.",
     keywords: "about pest control company mumbai, pest control company history, PestControlNearMe about, pest control company india",
-    canonical: "https://www.pestcontrolnearme.in/about",
+    canonical: "https://pestcontrolnearme.co/about",
     ogTitle: "About PestControlNearMe | India's Trusted Pest Control Company",
     ogDesc: "10+ years of trusted pest management. 50,000+ customers served across 55+ cities. Learn our story.",
     heroTitle: "About PestControlNearMe",
@@ -162,8 +162,8 @@ app.get('/about', (req, res) => {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "PestControlNearMe",
-      "url": "https://www.pestcontrolnearme.in",
-      "logo": "https://www.pestcontrolnearme.in/images/logo.png",
+      "url": "https://pestcontrolnearme.co",
+      "logo": "https://pestcontrolnearme.co/images/logo.png",
       "description": "India's most trusted pest control company with 10+ years experience, 50,000+ satisfied customers, and 200+ certified technicians across 55+ cities.",
       "foundingDate": "2014",
       "foundingLocation": {
@@ -199,7 +199,7 @@ app.get('/contact', (req, res) => {
     title: "Contact Pest Control Mumbai | Free Inspection & Quote",
     metaDesc: "Contact PestControlNearMe in Mumbai for free inspection and instant quote. Call +91 94533 94533 or fill our online form. Same-day response guaranteed!",
     keywords: "contact pest control mumbai, pest control phone number mumbai, pest control quote mumbai, free pest inspection mumbai",
-    canonical: "https://www.pestcontrolnearme.in/contact",
+    canonical: "https://pestcontrolnearme.co/contact",
     ogTitle: "Contact PestControlNearMe | Free Inspection & Instant Quote",
     ogDesc: "Get a free pest inspection and instant quote. Call +91 94533 94533 or fill our online form. Same-day response!",
     heroTitle: "Contact Us – Free Pest Inspection",
@@ -209,7 +209,7 @@ app.get('/contact', (req, res) => {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "PestControlNearMe",
-      "url": "https://www.pestcontrolnearme.in",
+      "url": "https://pestcontrolnearme.co",
       "telephone": "+91-9453394533",
       "email": "jitendra.gupta700@gmail.com",
       "address": {
@@ -253,7 +253,7 @@ app.get('/services', (req, res) => {
     title: "All Pest Control Services in Mumbai | Complete Pest Management",
     metaDesc: "Explore all 19 pest control services in Mumbai – cockroach, termite, mosquito, rodent, bed bug, ant, fly control & more. Professional & affordable. Call now!",
     keywords: "pest control services mumbai, all pest control services near me, cockroach control, termite control, mosquito control, rodent control, bed bug control",
-    canonical: "https://www.pestcontrolnearme.in/services",
+    canonical: "https://pestcontrolnearme.co/services",
     ogTitle: "19 Professional Pest Control Services | PestControlNearMe Mumbai",
     ogDesc: "Complete pest management solutions – cockroach, termite, mosquito, rodent, bed bug & more. Professional & affordable.",
     heroTitle: "Our Pest Control Services",
@@ -269,7 +269,7 @@ app.get('/services', (req, res) => {
         "@type": "ListItem",
         "position": i + 1,
         "name": s.name,
-        "url": "https://www.pestcontrolnearme.in/services/" + s.slug
+        "url": "https://pestcontrolnearme.co/services/" + s.slug
       }))
     }),
     faqSchema: getGenericFaqSchema('Mumbai'),
@@ -289,7 +289,7 @@ app.get('/services/:slug', (req, res) => {
     title: service.metaTitle,
     metaDesc: service.metaDesc,
     keywords: service.keywords,
-    canonical: `https://www.pestcontrolnearme.in/services/${service.slug}`,
+    canonical: `https://pestcontrolnearme.co/services/${service.slug}`,
     ogTitle: service.metaTitle,
     ogDesc: service.metaDesc,
     heroTitle: service.heroTitle,
@@ -305,11 +305,11 @@ app.get('/services/:slug', (req, res) => {
       "@type": "Service",
       "name": service.name + " in Mumbai",
       "description": service.metaDesc,
-      "url": "https://www.pestcontrolnearme.in/services/" + service.slug,
+      "url": "https://pestcontrolnearme.co/services/" + service.slug,
       "provider": {
         "@type": "LocalBusiness",
         "name": "PestControlNearMe",
-        "url": "https://www.pestcontrolnearme.in",
+        "url": "https://pestcontrolnearme.co",
         "telephone": "+91-9453394533",
         "address": {
           "@type": "PostalAddress",
@@ -405,7 +405,7 @@ app.get('/locations', (req, res) => {
     title: "Pest Control Services Across India | 55+ Cities | PestControlNearMe",
     metaDesc: "PestControlNearMe provides professional pest control services across 55+ cities in India. Find expert pest control near you today! Same-day service available.",
     keywords: "pest control near me india, pest control all cities india, pest control services india, pest control company india",
-    canonical: "https://www.pestcontrolnearme.in/locations",
+    canonical: "https://pestcontrolnearme.co/locations",
     ogTitle: "Pest Control in 55+ Cities Across India | PestControlNearMe",
     ogDesc: "Professional pest control in 55+ cities. Find expert pest control near you. Same-day service & 3-month guarantee.",
     heroTitle: "Our Service Locations Across India",
@@ -421,7 +421,7 @@ app.get('/locations', (req, res) => {
         "@type": "ListItem",
         "position": i + 1,
         "name": "Pest Control in " + l.name,
-        "url": "https://www.pestcontrolnearme.in/pest-control-in/" + l.slug
+        "url": "https://pestcontrolnearme.co/pest-control-in/" + l.slug
       }))
     }),
     breadcrumbs: [{ name: "Home", url: "/" }, { name: "Locations", url: "/locations" }]
@@ -435,7 +435,7 @@ app.get('/privacy-policy', (req, res) => {
     title: "Privacy Policy | PestControlNearMe",
     metaDesc: "Read PestControlNearMe's privacy policy. Learn how we collect, use, and protect your personal information when you use our pest control services.",
     keywords: "privacy policy pest control, PestControlNearMe privacy",
-    canonical: "https://www.pestcontrolnearme.in/privacy-policy",
+    canonical: "https://pestcontrolnearme.co/privacy-policy",
     ogTitle: "Privacy Policy | PestControlNearMe",
     ogDesc: "Learn how PestControlNearMe collects, uses, and protects your personal information.",
     heroTitle: "Privacy Policy",
@@ -452,7 +452,7 @@ app.get('/terms-and-conditions', (req, res) => {
     title: "Terms and Conditions | PestControlNearMe",
     metaDesc: "Read the terms and conditions for using PestControlNearMe's pest control services. Service guarantee, payment terms, and cancellation policy.",
     keywords: "terms and conditions pest control, PestControlNearMe terms",
-    canonical: "https://www.pestcontrolnearme.in/terms-and-conditions",
+    canonical: "https://pestcontrolnearme.co/terms-and-conditions",
     ogTitle: "Terms and Conditions | PestControlNearMe",
     ogDesc: "Terms and conditions for PestControlNearMe's pest control services.",
     heroTitle: "Terms & Conditions",
@@ -479,7 +479,7 @@ app.get('/sitemap.xml', async (req, res) => {
       ...services.map(s => ({ url: `/services/${s.slug}`, changefreq: 'weekly', priority: 0.85, lastmod })),
       ...locations.map(l => ({ url: `/pest-control-in/${l.slug}`, changefreq: 'weekly', priority: 0.85, lastmod }))
     ];
-    const stream = new SitemapStream({ hostname: 'https://www.pestcontrolnearme.in' });
+    const stream = new SitemapStream({ hostname: 'https://pestcontrolnearme.co' });
     const data = await streamToPromise(Readable.from(links).pipe(stream));
     res.send(data.toString());
   } catch (e) {
@@ -494,7 +494,7 @@ app.get('/robots.txt', (req, res) => {
 Allow: /
 Disallow: /private/
 
-Sitemap: https://www.pestcontrolnearme.in/sitemap.xml
+Sitemap: https://pestcontrolnearme.co/sitemap.xml
 `);
 });
 
