@@ -20,9 +20,9 @@ locals.page = {
   keywords:    "pest control Mumbai, pest management Mumbai, cockroach control Mumbai, termite control Mumbai, mosquito control Mumbai, rodent control Mumbai",
   canonical:   siteUrl + "/pest-control-in/mumbai",
   ogImage:     siteUrl + "/images/og-image.jpg",
-  ogTitle:     "Pest Control in Mumbai | Professional Pest Management Maharashtra",
-  ogDesc:      "Top-rated pest control in Mumbai. Certified experts, same-day service, 3-month guarantee. Call now for free inspection!",
+  geoRegion:   "IN-MH",
   geoPlacename: "Mumbai",
+  geoPosition: "19.076,72.8777",
   heroTitle:   "Pest Control in Mumbai",
   heroSubtitle:"Professional pest management services for homes \u0026 businesses in Mumbai, Maharashtra. Certified technicians, safe products, guaranteed results.",
   breadcrumbs: [
@@ -44,10 +44,7 @@ locals.page = {
       "addressCountry":  "IN"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 19.076, "longitude": 72.8777 },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "312" },
-    "priceRange": "₹₹",
-    "image": siteUrl + "/images/logo.png",
-    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "06:00", "closes": "22:00" }]
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" }
   },
   faqSchema: {
     "@context": "https://schema.org",
@@ -105,7 +102,7 @@ locals.page = {
 </section>
 
 <!-- CTA 1 -->
-<% locals.ctaVariant = 'primary'; locals.ctaLocation = 'Mumbai'; %>
+<% var ctaVariant = 'primary'; var ctaLocation = 'Mumbai'; %>
 <%- include('../../partials/cta') %>
 
 <!-- Location Content -->
@@ -189,7 +186,7 @@ locals.page = {
 </section>
 
 <!-- Google Map -->
-<% locals.mapEmbedUrl = 'https://maps.google.com/maps?q=Mumbai,Maharashtra&output=embed'; locals.mapLocation = 'Mumbai'; %>
+<% var mapEmbedUrl = 'https://maps.google.com/maps?q=Mumbai,Maharashtra&output=embed'; var mapLocation = 'Mumbai'; %>
 <%- include('../../partials/google-map') %>
 
 <!-- CTA 3 -->

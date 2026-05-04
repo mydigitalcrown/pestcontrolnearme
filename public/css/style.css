@@ -1250,6 +1250,9 @@ p:last-child { margin-bottom: 0; }
 }
 .footer-bottom-inner { text-align: center; }
 .footer-copy { font-size: .82rem; color: rgba(255,255,255,.6); margin-bottom: .3rem; }
+.footer-seo-credit { font-size: .78rem; color: rgba(255,255,255,.5); margin-bottom: .3rem; }
+.footer-seo-credit a { color: rgba(255,255,255,.7); text-decoration: none; transition: color var(--transition); border-bottom: 1px solid rgba(255,255,255,.3); }
+.footer-seo-credit a:hover { color: rgba(255,255,255,.95); border-bottom-color: rgba(255,255,255,.6); }
 .footer-disclaimer { font-size: .76rem; color: rgba(255,255,255,.45); }
 
 /* ----- FLOATING WhatsApp ---------------------------------- */

@@ -20,9 +20,9 @@ locals.page = {
   keywords:    "pest control Tiruchirappalli, pest management Tiruchirappalli, cockroach control Tiruchirappalli, termite control Tiruchirappalli, mosquito control Tiruchirappalli, rodent control Tiruchirappalli",
   canonical:   siteUrl + "/pest-control-in/tiruchirappalli",
   ogImage:     siteUrl + "/images/og-image.jpg",
-  ogTitle:     "Pest Control in Tiruchirappalli | Professional Pest Management Tamil Nadu",
-  ogDesc:      "Top-rated pest control in Tiruchirappalli. Certified experts, same-day service, 3-month guarantee. Call now for free inspection!",
+  geoRegion:   "IN-TN",
   geoPlacename: "Tiruchirappalli",
+  geoPosition: "10.7905,78.7047",
   heroTitle:   "Pest Control in Tiruchirappalli",
   heroSubtitle:"Professional pest management services for homes \u0026 businesses in Tiruchirappalli, Tamil Nadu. Certified technicians, safe products, guaranteed results.",
   breadcrumbs: [
@@ -44,10 +44,7 @@ locals.page = {
       "addressCountry":  "IN"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 10.7905, "longitude": 78.7047 },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "312" },
-    "priceRange": "₹₹",
-    "image": siteUrl + "/images/logo.png",
-    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "06:00", "closes": "22:00" }]
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" }
   },
   faqSchema: {
     "@context": "https://schema.org",
@@ -105,7 +102,7 @@ locals.page = {
 </section>
 
 <!-- CTA 1 -->
-<% locals.ctaVariant = 'primary'; locals.ctaLocation = 'Tiruchirappalli'; %>
+<% var ctaVariant = 'primary'; var ctaLocation = 'Tiruchirappalli'; %>
 <%- include('../../partials/cta') %>
 
 <!-- Location Content -->
@@ -189,7 +186,7 @@ locals.page = {
 </section>
 
 <!-- Google Map -->
-<% locals.mapEmbedUrl = 'https://maps.google.com/maps?q=Tiruchirappalli,Tamil Nadu&output=embed'; locals.mapLocation = 'Tiruchirappalli'; %>
+<% var mapEmbedUrl = 'https://maps.google.com/maps?q=Tiruchirappalli,Tamil Nadu&output=embed'; var mapLocation = 'Tiruchirappalli'; %>
 <%- include('../../partials/google-map') %>
 
 <!-- CTA 3 -->

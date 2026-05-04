@@ -20,9 +20,9 @@ locals.page = {
   keywords:    "pest control Thane, pest management Thane, cockroach control Thane, termite control Thane, mosquito control Thane, rodent control Thane",
   canonical:   siteUrl + "/pest-control-in/thane",
   ogImage:     siteUrl + "/images/og-image.jpg",
-  ogTitle:     "Pest Control in Thane | Professional Pest Management Maharashtra",
-  ogDesc:      "Top-rated pest control in Thane. Certified experts, same-day service, 3-month guarantee. Call now for free inspection!",
+  geoRegion:   "IN-MH",
   geoPlacename: "Thane",
+  geoPosition: "19.2183,72.9781",
   heroTitle:   "Pest Control in Thane",
   heroSubtitle:"Professional pest management services for homes \u0026 businesses in Thane, Maharashtra. Certified technicians, safe products, guaranteed results.",
   breadcrumbs: [
@@ -44,10 +44,7 @@ locals.page = {
       "addressCountry":  "IN"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 19.2183, "longitude": 72.9781 },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "312" },
-    "priceRange": "₹₹",
-    "image": siteUrl + "/images/logo.png",
-    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "06:00", "closes": "22:00" }]
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" }
   },
   faqSchema: {
     "@context": "https://schema.org",
@@ -105,7 +102,7 @@ locals.page = {
 </section>
 
 <!-- CTA 1 -->
-<% locals.ctaVariant = 'primary'; locals.ctaLocation = 'Thane'; %>
+<% var ctaVariant = 'primary'; var ctaLocation = 'Thane'; %>
 <%- include('../../partials/cta') %>
 
 <!-- Location Content -->
@@ -189,7 +186,7 @@ locals.page = {
 </section>
 
 <!-- Google Map -->
-<% locals.mapEmbedUrl = 'https://maps.google.com/maps?q=Thane,Maharashtra&output=embed'; locals.mapLocation = 'Thane'; %>
+<% var mapEmbedUrl = 'https://maps.google.com/maps?q=Thane,Maharashtra&output=embed'; var mapLocation = 'Thane'; %>
 <%- include('../../partials/google-map') %>
 
 <!-- CTA 3 -->

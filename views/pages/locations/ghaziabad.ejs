@@ -20,9 +20,9 @@ locals.page = {
   keywords:    "pest control Ghaziabad, pest management Ghaziabad, cockroach control Ghaziabad, termite control Ghaziabad, mosquito control Ghaziabad, rodent control Ghaziabad",
   canonical:   siteUrl + "/pest-control-in/ghaziabad",
   ogImage:     siteUrl + "/images/og-image.jpg",
-  ogTitle:     "Pest Control in Ghaziabad | Professional Pest Management Uttar Pradesh",
-  ogDesc:      "Top-rated pest control in Ghaziabad. Certified experts, same-day service, 3-month guarantee. Call now for free inspection!",
+  geoRegion:   "IN-UP",
   geoPlacename: "Ghaziabad",
+  geoPosition: "28.6692,77.4538",
   heroTitle:   "Pest Control in Ghaziabad",
   heroSubtitle:"Professional pest management services for homes \u0026 businesses in Ghaziabad, Uttar Pradesh. Certified technicians, safe products, guaranteed results.",
   breadcrumbs: [
@@ -44,10 +44,7 @@ locals.page = {
       "addressCountry":  "IN"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 28.6692, "longitude": 77.4538 },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "312" },
-    "priceRange": "₹₹",
-    "image": siteUrl + "/images/logo.png",
-    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "06:00", "closes": "22:00" }]
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" }
   },
   faqSchema: {
     "@context": "https://schema.org",
@@ -105,7 +102,7 @@ locals.page = {
 </section>
 
 <!-- CTA 1 -->
-<% locals.ctaVariant = 'primary'; locals.ctaLocation = 'Ghaziabad'; %>
+<% var ctaVariant = 'primary'; var ctaLocation = 'Ghaziabad'; %>
 <%- include('../../partials/cta') %>
 
 <!-- Location Content -->
@@ -189,7 +186,7 @@ locals.page = {
 </section>
 
 <!-- Google Map -->
-<% locals.mapEmbedUrl = 'https://maps.google.com/maps?q=Ghaziabad,Uttar Pradesh&output=embed'; locals.mapLocation = 'Ghaziabad'; %>
+<% var mapEmbedUrl = 'https://maps.google.com/maps?q=Ghaziabad,Uttar Pradesh&output=embed'; var mapLocation = 'Ghaziabad'; %>
 <%- include('../../partials/google-map') %>
 
 <!-- CTA 3 -->

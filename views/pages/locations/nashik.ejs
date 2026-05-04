@@ -20,9 +20,9 @@ locals.page = {
   keywords:    "pest control Nashik, pest management Nashik, cockroach control Nashik, termite control Nashik, mosquito control Nashik, rodent control Nashik",
   canonical:   siteUrl + "/pest-control-in/nashik",
   ogImage:     siteUrl + "/images/og-image.jpg",
-  ogTitle:     "Pest Control in Nashik | Professional Pest Management Maharashtra",
-  ogDesc:      "Top-rated pest control in Nashik. Certified experts, same-day service, 3-month guarantee. Call now for free inspection!",
+  geoRegion:   "IN-MH",
   geoPlacename: "Nashik",
+  geoPosition: "19.9975,73.7898",
   heroTitle:   "Pest Control in Nashik",
   heroSubtitle:"Professional pest management services for homes \u0026 businesses in Nashik, Maharashtra. Certified technicians, safe products, guaranteed results.",
   breadcrumbs: [
@@ -44,10 +44,7 @@ locals.page = {
       "addressCountry":  "IN"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 19.9975, "longitude": 73.7898 },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "312" },
-    "priceRange": "₹₹",
-    "image": siteUrl + "/images/logo.png",
-    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "06:00", "closes": "22:00" }]
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" }
   },
   faqSchema: {
     "@context": "https://schema.org",
@@ -105,7 +102,7 @@ locals.page = {
 </section>
 
 <!-- CTA 1 -->
-<% locals.ctaVariant = 'primary'; locals.ctaLocation = 'Nashik'; %>
+<% var ctaVariant = 'primary'; var ctaLocation = 'Nashik'; %>
 <%- include('../../partials/cta') %>
 
 <!-- Location Content -->
@@ -189,7 +186,7 @@ locals.page = {
 </section>
 
 <!-- Google Map -->
-<% locals.mapEmbedUrl = 'https://maps.google.com/maps?q=Nashik,Maharashtra&output=embed'; locals.mapLocation = 'Nashik'; %>
+<% var mapEmbedUrl = 'https://maps.google.com/maps?q=Nashik,Maharashtra&output=embed'; var mapLocation = 'Nashik'; %>
 <%- include('../../partials/google-map') %>
 
 <!-- CTA 3 -->

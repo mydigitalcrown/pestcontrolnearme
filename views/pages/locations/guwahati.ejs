@@ -20,9 +20,9 @@ locals.page = {
   keywords:    "pest control Guwahati, pest management Guwahati, cockroach control Guwahati, termite control Guwahati, mosquito control Guwahati, rodent control Guwahati",
   canonical:   siteUrl + "/pest-control-in/guwahati",
   ogImage:     siteUrl + "/images/og-image.jpg",
-  ogTitle:     "Pest Control in Guwahati | Professional Pest Management Assam",
-  ogDesc:      "Top-rated pest control in Guwahati. Certified experts, same-day service, 3-month guarantee. Call now for free inspection!",
+  geoRegion:   "IN-AS",
   geoPlacename: "Guwahati",
+  geoPosition: "26.1445,91.7362",
   heroTitle:   "Pest Control in Guwahati",
   heroSubtitle:"Professional pest management services for homes \u0026 businesses in Guwahati, Assam. Certified technicians, safe products, guaranteed results.",
   breadcrumbs: [
@@ -44,10 +44,7 @@ locals.page = {
       "addressCountry":  "IN"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 26.1445, "longitude": 91.7362 },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "312" },
-    "priceRange": "₹₹",
-    "image": siteUrl + "/images/logo.png",
-    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "06:00", "closes": "22:00" }]
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" }
   },
   faqSchema: {
     "@context": "https://schema.org",
@@ -105,7 +102,7 @@ locals.page = {
 </section>
 
 <!-- CTA 1 -->
-<% locals.ctaVariant = 'primary'; locals.ctaLocation = 'Guwahati'; %>
+<% var ctaVariant = 'primary'; var ctaLocation = 'Guwahati'; %>
 <%- include('../../partials/cta') %>
 
 <!-- Location Content -->
@@ -189,7 +186,7 @@ locals.page = {
 </section>
 
 <!-- Google Map -->
-<% locals.mapEmbedUrl = 'https://maps.google.com/maps?q=Guwahati,Assam&output=embed'; locals.mapLocation = 'Guwahati'; %>
+<% var mapEmbedUrl = 'https://maps.google.com/maps?q=Guwahati,Assam&output=embed'; var mapLocation = 'Guwahati'; %>
 <%- include('../../partials/google-map') %>
 
 <!-- CTA 3 -->

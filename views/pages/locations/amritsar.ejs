@@ -20,9 +20,9 @@ locals.page = {
   keywords:    "pest control Amritsar, pest management Amritsar, cockroach control Amritsar, termite control Amritsar, mosquito control Amritsar, rodent control Amritsar",
   canonical:   siteUrl + "/pest-control-in/amritsar",
   ogImage:     siteUrl + "/images/og-image.jpg",
-  ogTitle:     "Pest Control in Amritsar | Professional Pest Management Punjab",
-  ogDesc:      "Top-rated pest control in Amritsar. Certified experts, same-day service, 3-month guarantee. Call now for free inspection!",
+  geoRegion:   "IN-PB",
   geoPlacename: "Amritsar",
+  geoPosition: "31.634,74.8723",
   heroTitle:   "Pest Control in Amritsar",
   heroSubtitle:"Professional pest management services for homes \u0026 businesses in Amritsar, Punjab. Certified technicians, safe products, guaranteed results.",
   breadcrumbs: [
@@ -44,10 +44,7 @@ locals.page = {
       "addressCountry":  "IN"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 31.634, "longitude": 74.8723 },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "312" },
-    "priceRange": "₹₹",
-    "image": siteUrl + "/images/logo.png",
-    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "06:00", "closes": "22:00" }]
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" }
   },
   faqSchema: {
     "@context": "https://schema.org",
@@ -105,7 +102,7 @@ locals.page = {
 </section>
 
 <!-- CTA 1 -->
-<% locals.ctaVariant = 'primary'; locals.ctaLocation = 'Amritsar'; %>
+<% var ctaVariant = 'primary'; var ctaLocation = 'Amritsar'; %>
 <%- include('../../partials/cta') %>
 
 <!-- Location Content -->
@@ -189,7 +186,7 @@ locals.page = {
 </section>
 
 <!-- Google Map -->
-<% locals.mapEmbedUrl = 'https://maps.google.com/maps?q=Amritsar,Punjab&output=embed'; locals.mapLocation = 'Amritsar'; %>
+<% var mapEmbedUrl = 'https://maps.google.com/maps?q=Amritsar,Punjab&output=embed'; var mapLocation = 'Amritsar'; %>
 <%- include('../../partials/google-map') %>
 
 <!-- CTA 3 -->

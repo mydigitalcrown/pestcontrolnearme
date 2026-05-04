@@ -32,9 +32,30 @@
   <% if (typeof page.geoPlacename !== 'undefined') { %>
   <meta name="geo.placename" content="<%= page.geoPlacename %>">
   <% } %>
+  <% if (typeof page.geoPosition !== 'undefined') { %>
+  <meta name="ICBM" content="<%= page.geoPosition %>">
+  <% } %>
+
+  <!-- Last Modified & Content Information -->
+  <meta http-equiv="last-modified" content="<%= page.lastModified || new Date().toISOString() %>">
 
   <!-- Canonical -->
   <link rel="canonical" href="<%= page.canonical || siteUrl + currentPath %>">
+
+  <!-- Alternate Language Tags (hreflang) -->
+  <link rel="alternate" hreflang="en-IN" href="<%= page.canonical || siteUrl + currentPath %>">
+  <link rel="alternate" hreflang="x-default" href="<%= page.canonical || siteUrl + currentPath %>">
+
+  <!-- Performance Hints -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://maps.googleapis.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Sitemap Reference -->
+  <link rel="sitemap" type="application/xml" href="<%= siteUrl %>/sitemap.xml">
 
   <!-- Open Graph -->
   <meta property="og:type" content="<%= page.ogType || 'website' %>">

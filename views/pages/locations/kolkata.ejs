@@ -20,9 +20,9 @@ locals.page = {
   keywords:    "pest control Kolkata, pest management Kolkata, cockroach control Kolkata, termite control Kolkata, mosquito control Kolkata, rodent control Kolkata",
   canonical:   siteUrl + "/pest-control-in/kolkata",
   ogImage:     siteUrl + "/images/og-image.jpg",
-  ogTitle:     "Pest Control in Kolkata | Professional Pest Management West Bengal",
-  ogDesc:      "Top-rated pest control in Kolkata. Certified experts, same-day service, 3-month guarantee. Call now for free inspection!",
+  geoRegion:   "IN-WB",
   geoPlacename: "Kolkata",
+  geoPosition: "22.5726,88.3639",
   heroTitle:   "Pest Control in Kolkata",
   heroSubtitle:"Professional pest management services for homes \u0026 businesses in Kolkata, West Bengal. Certified technicians, safe products, guaranteed results.",
   breadcrumbs: [
@@ -44,10 +44,7 @@ locals.page = {
       "addressCountry":  "IN"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 22.5726, "longitude": 88.3639 },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "312" },
-    "priceRange": "₹₹",
-    "image": siteUrl + "/images/logo.png",
-    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "06:00", "closes": "22:00" }]
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" }
   },
   faqSchema: {
     "@context": "https://schema.org",
@@ -105,7 +102,7 @@ locals.page = {
 </section>
 
 <!-- CTA 1 -->
-<% locals.ctaVariant = 'primary'; locals.ctaLocation = 'Kolkata'; %>
+<% var ctaVariant = 'primary'; var ctaLocation = 'Kolkata'; %>
 <%- include('../../partials/cta') %>
 
 <!-- Location Content -->
@@ -189,7 +186,7 @@ locals.page = {
 </section>
 
 <!-- Google Map -->
-<% locals.mapEmbedUrl = 'https://maps.google.com/maps?q=Kolkata,West Bengal&output=embed'; locals.mapLocation = 'Kolkata'; %>
+<% var mapEmbedUrl = 'https://maps.google.com/maps?q=Kolkata,West Bengal&output=embed'; var mapLocation = 'Kolkata'; %>
 <%- include('../../partials/google-map') %>
 
 <!-- CTA 3 -->

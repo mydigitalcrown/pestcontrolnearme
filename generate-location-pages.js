@@ -10,11 +10,22 @@ const locations = require('./data/locations');
 const OUT_DIR = path.join(__dirname, 'views', 'pages', 'locations');
 if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
 
+// State to ISO code mapping for Indian states (geo.region meta tag)
+const stateToGeoCode = {
+  'Maharashtra': 'IN-MH', 'Delhi NCR': 'IN-DL', 'Karnataka': 'IN-KA', 'Telangana': 'IN-TS',
+  'Tamil Nadu': 'IN-TN', 'West Bengal': 'IN-WB', 'Gujarat': 'IN-GJ', 'Rajasthan': 'IN-RJ',
+  'Uttar Pradesh': 'IN-UP', 'Madhya Pradesh': 'IN-MP', 'Punjab': 'IN-PB', 'Haryana': 'IN-HR',
+  'Bihar': 'IN-BR', 'Jharkhand': 'IN-JH', 'Andhra Pradesh': 'IN-AP', 'Assam': 'IN-AS',
+  'Odisha': 'IN-OR', 'Kerala': 'IN-KL', 'Chhattisgarh': 'IN-CG', 'Punjab & Haryana': 'IN-PB'
+};
+
 const routeLines = []; // will print routes to paste into server.js
 
 locations.forEach(loc => {
   const metaTitle = `Pest Control in ${loc.name} | Best Pest Management Services ${loc.state}`;
   const metaDesc  = `Top-rated pest control in ${loc.name}, ${loc.state}. Cockroach, termite, mosquito, rodent & all pest services. Certified experts, same-day service, 3-month guarantee. Call now!`;
+  const geoRegion = stateToGeoCode[loc.state] || 'IN';
+  const geoPosition = `${loc.lat},${loc.lng}`;
 
   const content = `<%
 /* ============================================================
@@ -38,6 +49,9 @@ locals.page = {
   keywords:    "pest control ${loc.name}, pest management ${loc.name}, cockroach control ${loc.name}, termite control ${loc.name}, mosquito control ${loc.name}, rodent control ${loc.name}",
   canonical:   siteUrl + "/pest-control-in/${loc.slug}",
   ogImage:     siteUrl + "/images/og-image.jpg",
+  geoRegion:   "${geoRegion}",
+  geoPlacename: "${loc.name}",
+  geoPosition: "${geoPosition}",
   heroTitle:   "Pest Control in ${loc.name}",
   heroSubtitle:"Professional pest management services for homes \\u0026 businesses in ${loc.name}, ${loc.state}. Certified technicians, safe products, guaranteed results.",
   breadcrumbs: [

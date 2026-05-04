@@ -20,9 +20,9 @@ locals.page = {
   keywords:    "pest control Jodhpur, pest management Jodhpur, cockroach control Jodhpur, termite control Jodhpur, mosquito control Jodhpur, rodent control Jodhpur",
   canonical:   siteUrl + "/pest-control-in/jodhpur",
   ogImage:     siteUrl + "/images/og-image.jpg",
-  ogTitle:     "Pest Control in Jodhpur | Professional Pest Management Rajasthan",
-  ogDesc:      "Top-rated pest control in Jodhpur. Certified experts, same-day service, 3-month guarantee. Call now for free inspection!",
+  geoRegion:   "IN-RJ",
   geoPlacename: "Jodhpur",
+  geoPosition: "26.2389,73.0243",
   heroTitle:   "Pest Control in Jodhpur",
   heroSubtitle:"Professional pest management services for homes \u0026 businesses in Jodhpur, Rajasthan. Certified technicians, safe products, guaranteed results.",
   breadcrumbs: [
@@ -44,10 +44,7 @@ locals.page = {
       "addressCountry":  "IN"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 26.2389, "longitude": 73.0243 },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "312" },
-    "priceRange": "₹₹",
-    "image": siteUrl + "/images/logo.png",
-    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "06:00", "closes": "22:00" }]
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" }
   },
   faqSchema: {
     "@context": "https://schema.org",
@@ -105,7 +102,7 @@ locals.page = {
 </section>
 
 <!-- CTA 1 -->
-<% locals.ctaVariant = 'primary'; locals.ctaLocation = 'Jodhpur'; %>
+<% var ctaVariant = 'primary'; var ctaLocation = 'Jodhpur'; %>
 <%- include('../../partials/cta') %>
 
 <!-- Location Content -->
@@ -189,7 +186,7 @@ locals.page = {
 </section>
 
 <!-- Google Map -->
-<% locals.mapEmbedUrl = 'https://maps.google.com/maps?q=Jodhpur,Rajasthan&output=embed'; locals.mapLocation = 'Jodhpur'; %>
+<% var mapEmbedUrl = 'https://maps.google.com/maps?q=Jodhpur,Rajasthan&output=embed'; var mapLocation = 'Jodhpur'; %>
 <%- include('../../partials/google-map') %>
 
 <!-- CTA 3 -->

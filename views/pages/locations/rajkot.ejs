@@ -20,9 +20,9 @@ locals.page = {
   keywords:    "pest control Rajkot, pest management Rajkot, cockroach control Rajkot, termite control Rajkot, mosquito control Rajkot, rodent control Rajkot",
   canonical:   siteUrl + "/pest-control-in/rajkot",
   ogImage:     siteUrl + "/images/og-image.jpg",
-  ogTitle:     "Pest Control in Rajkot | Professional Pest Management Gujarat",
-  ogDesc:      "Top-rated pest control in Rajkot. Certified experts, same-day service, 3-month guarantee. Call now for free inspection!",
+  geoRegion:   "IN-GJ",
   geoPlacename: "Rajkot",
+  geoPosition: "22.3039,70.8022",
   heroTitle:   "Pest Control in Rajkot",
   heroSubtitle:"Professional pest management services for homes \u0026 businesses in Rajkot, Gujarat. Certified technicians, safe products, guaranteed results.",
   breadcrumbs: [
@@ -44,10 +44,7 @@ locals.page = {
       "addressCountry":  "IN"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 22.3039, "longitude": 70.8022 },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "312" },
-    "priceRange": "₹₹",
-    "image": siteUrl + "/images/logo.png",
-    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "06:00", "closes": "22:00" }]
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" }
   },
   faqSchema: {
     "@context": "https://schema.org",
@@ -105,7 +102,7 @@ locals.page = {
 </section>
 
 <!-- CTA 1 -->
-<% locals.ctaVariant = 'primary'; locals.ctaLocation = 'Rajkot'; %>
+<% var ctaVariant = 'primary'; var ctaLocation = 'Rajkot'; %>
 <%- include('../../partials/cta') %>
 
 <!-- Location Content -->
@@ -189,7 +186,7 @@ locals.page = {
 </section>
 
 <!-- Google Map -->
-<% locals.mapEmbedUrl = 'https://maps.google.com/maps?q=Rajkot,Gujarat&output=embed'; locals.mapLocation = 'Rajkot'; %>
+<% var mapEmbedUrl = 'https://maps.google.com/maps?q=Rajkot,Gujarat&output=embed'; var mapLocation = 'Rajkot'; %>
 <%- include('../../partials/google-map') %>
 
 <!-- CTA 3 -->

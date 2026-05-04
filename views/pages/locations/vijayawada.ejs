@@ -20,9 +20,9 @@ locals.page = {
   keywords:    "pest control Vijayawada, pest management Vijayawada, cockroach control Vijayawada, termite control Vijayawada, mosquito control Vijayawada, rodent control Vijayawada",
   canonical:   siteUrl + "/pest-control-in/vijayawada",
   ogImage:     siteUrl + "/images/og-image.jpg",
-  ogTitle:     "Pest Control in Vijayawada | Professional Pest Management Andhra Pradesh",
-  ogDesc:      "Top-rated pest control in Vijayawada. Certified experts, same-day service, 3-month guarantee. Call now for free inspection!",
+  geoRegion:   "IN-AP",
   geoPlacename: "Vijayawada",
+  geoPosition: "16.5062,80.648",
   heroTitle:   "Pest Control in Vijayawada",
   heroSubtitle:"Professional pest management services for homes \u0026 businesses in Vijayawada, Andhra Pradesh. Certified technicians, safe products, guaranteed results.",
   breadcrumbs: [
@@ -44,10 +44,7 @@ locals.page = {
       "addressCountry":  "IN"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 16.5062, "longitude": 80.648 },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "312" },
-    "priceRange": "₹₹",
-    "image": siteUrl + "/images/logo.png",
-    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "06:00", "closes": "22:00" }]
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" }
   },
   faqSchema: {
     "@context": "https://schema.org",
@@ -105,7 +102,7 @@ locals.page = {
 </section>
 
 <!-- CTA 1 -->
-<% locals.ctaVariant = 'primary'; locals.ctaLocation = 'Vijayawada'; %>
+<% var ctaVariant = 'primary'; var ctaLocation = 'Vijayawada'; %>
 <%- include('../../partials/cta') %>
 
 <!-- Location Content -->
@@ -189,7 +186,7 @@ locals.page = {
 </section>
 
 <!-- Google Map -->
-<% locals.mapEmbedUrl = 'https://maps.google.com/maps?q=Vijayawada,Andhra Pradesh&output=embed'; locals.mapLocation = 'Vijayawada'; %>
+<% var mapEmbedUrl = 'https://maps.google.com/maps?q=Vijayawada,Andhra Pradesh&output=embed'; var mapLocation = 'Vijayawada'; %>
 <%- include('../../partials/google-map') %>
 
 <!-- CTA 3 -->
