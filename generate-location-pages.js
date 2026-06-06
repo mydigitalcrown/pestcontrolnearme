@@ -28,50 +28,63 @@ locations.forEach(loc => {
   const geoRegion = stateToGeoCode[loc.state] || 'IN';
   const geoPosition = `${loc.lat},${loc.lng}`;
 
+  // Escape special characters in location data for safe JavaScript embedding
+  const escapeForJS = (str) => {
+    return str.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, '\\n').replace(/\r/g, '\\r');
+  };
+
+  const escapeForQuotes = (str) => {
+    return str.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/\r/g, '\\r');
+  };
+
+  const safeName = escapeForJS(loc.name);
+  const safeState = escapeForJS(loc.state);
+  const safeDesc = escapeForJS(loc.desc);
+
   const content = `<%
 /* ============================================================
-   LOCATION PAGE — ${loc.name}, ${loc.state}
+   LOCATION PAGE — ${safeName}, ${safeState}
    URL: /pest-control-in/${loc.slug}
    CONTENT LENGTH: 1500+ words (comprehensive SEO-optimized)
    ============================================================ */
 locals.location = {
   slug:       "${loc.slug}",
-  name:       "${loc.name}",
-  state:      "${loc.state}",
+  name:       "${safeName}",
+  state:      "${safeState}",
   lat:        ${loc.lat},
   lng:        ${loc.lng},
-  population: "${loc.population}",
+  population: "${escapeForJS(loc.population)}",
   mapEmbed:   "${loc.mapEmbed}",
-  desc:       "${loc.desc.replace(/"/g, '\\"')}"
+  desc:       "${safeDesc}"
 };
 
 locals.page = {
-  title:       "${metaTitle}",
-  metaDesc:    "${metaDesc}",
-  keywords:    "pest control ${loc.name}, pest management ${loc.name}, cockroach control ${loc.name}, termite control ${loc.name}, mosquito control ${loc.name}, rodent control ${loc.name}, best pest control company ${loc.name}",
+  title:       "${escapeForJS(metaTitle)}",
+  metaDesc:    "${escapeForJS(metaDesc)}",
+  keywords:    "pest control ${safeName}, pest management ${safeName}, cockroach control ${safeName}, termite control ${safeName}, mosquito control ${safeName}, rodent control ${safeName}, best pest control company ${safeName}",
   canonical:   siteUrl + "/pest-control-in/${loc.slug}",
   ogImage:     siteUrl + "/images/og-image.jpg",
   geoRegion:   "${geoRegion}",
-  geoPlacename: "${loc.name}",
+  geoPlacename: "${safeName}",
   geoPosition: "${geoPosition}",
-  heroTitle:   "Pest Control Services in ${loc.name}",
-  heroSubtitle:"Professional pest management for homes \\u0026 businesses in ${loc.name}, ${loc.state}. Certified technicians, safe treatments, 3-month guarantee.",
+  heroTitle:   "Pest Control Services in ${safeName}",
+  heroSubtitle:"Professional pest management for homes \\u0026 businesses in ${safeName}, ${safeState}. Certified technicians, safe treatments, 3-month guarantee.",
   breadcrumbs: [
     { name: "Home",      url: "/" },
     { name: "Locations", url: "/locations" },
-    { name: "Pest Control in ${loc.name}", url: "/pest-control-in/${loc.slug}" }
+    { name: "Pest Control in ${safeName}", url: "/pest-control-in/${loc.slug}" }
   ],
   schema: {
     "@context":    "https://schema.org",
     "@type":       "LocalBusiness",
-    "name":        siteName + " – ${loc.name}",
-    "description": "${metaDesc}",
+    "name":        siteName + " – ${safeName}",
+    "description": "${escapeForJS(metaDesc)}",
     "url":         siteUrl + "/pest-control-in/${loc.slug}",
     "telephone":   phone,
     "address": {
       "@type":           "PostalAddress",
-      "addressLocality": "${loc.name}",
-      "addressRegion":   "${loc.state}",
+      "addressLocality": "${safeName}",
+      "addressRegion":   "${safeState}",
       "addressCountry":  "IN"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": ${loc.lat}, "longitude": ${loc.lng} },
@@ -81,13 +94,13 @@ locals.page = {
     "@context": "https://schema.org",
     "@type":    "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is the best pest control company in ${loc.name}?", "acceptedAnswer": { "@type": "Answer", "text": "PestControlNearMe is rated the #1 pest control company in ${loc.name} with a 4.9-star rating, 200+ government-certified technicians, and an industry-leading 3-month service guarantee." } },
-      { "@type": "Question", "name": "How much does professional pest control cost in ${loc.name}?", "acceptedAnswer": { "@type": "Answer", "text": "Pest control prices in ${loc.name} depend on the specific service type, property size, pest infestation severity, and treatment frequency. We provide transparent, competitive quotes. Contact us for a free inspection and customized quote." } },
-      { "@type": "Question", "name": "Do you offer emergency pest control services in ${loc.name}?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we provide same-day emergency pest control services in ${loc.name}. Whether it's termites, cockroaches, or bed bugs, call us immediately for urgent assistance available 24/7." } },
-      { "@type": "Question", "name": "What areas of ${loc.name} do you service?", "acceptedAnswer": { "@type": "Answer", "text": "We serve all residential areas, commercial complexes, industrial zones, hospitals, hotels, restaurants, and all establishments across ${loc.name} and its suburbs with our network of trained technicians." } },
-      { "@type": "Question", "name": "Is your pest control service safe for families and pets in ${loc.name}?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely yes. All pest control treatments in ${loc.name} use WHO-approved, government-certified, safe chemicals. Our technicians follow strict safety protocols to protect your family, children, and pets." } },
-      { "@type": "Question", "name": "What is your service guarantee in ${loc.name}?", "acceptedAnswer": { "@type": "Answer", "text": "We offer an industry-leading 3-month service guarantee. If pests return within 3 months of treatment in ${loc.name}, we will re-treat your property absolutely free of charge." } },
-      { "@type": "Question", "name": "How quickly can I book pest control in ${loc.name}?", "acceptedAnswer": { "@type": "Answer", "text": "You can book online, via WhatsApp, or by phone. Most appointments in ${loc.name} are confirmed within 30 minutes, and same-day service is often available depending on technician availability." } }
+      { "@type": "Question", "name": "What is the best pest control company in ${safeName}?", "acceptedAnswer": { "@type": "Answer", "text": "PestControlNearMe is rated the #1 pest control company in ${safeName} with a 4.9-star rating, 200+ government-certified technicians, and an industry-leading 3-month service guarantee." } },
+      { "@type": "Question", "name": "How much does professional pest control cost in ${safeName}?", "acceptedAnswer": { "@type": "Answer", "text": "Pest control prices in ${safeName} depend on the specific service type, property size, pest infestation severity, and treatment frequency. We provide transparent, competitive quotes. Contact us for a free inspection and customized quote." } },
+      { "@type": "Question", "name": "Do you offer emergency pest control services in ${safeName}?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we provide same-day emergency pest control services in ${safeName}. Whether it\\'s termites, cockroaches, or bed bugs, call us immediately for urgent assistance available 24/7." } },
+      { "@type": "Question", "name": "What areas of ${safeName} do you service?", "acceptedAnswer": { "@type": "Answer", "text": "We serve all residential areas, commercial complexes, industrial zones, hospitals, hotels, restaurants, and all establishments across ${safeName} and its suburbs with our network of trained technicians." } },
+      { "@type": "Question", "name": "Is your pest control service safe for families and pets in ${safeName}?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely yes. All pest control treatments in ${safeName} use WHO-approved, government-certified, safe chemicals. Our technicians follow strict safety protocols to protect your family, children, and pets." } },
+      { "@type": "Question", "name": "What is your service guarantee in ${safeName}?", "acceptedAnswer": { "@type": "Answer", "text": "We offer an industry-leading 3-month service guarantee. If pests return within 3 months of treatment in ${safeName}, we will re-treat your property absolutely free of charge." } },
+      { "@type": "Question", "name": "How quickly can I book pest control in ${safeName}?", "acceptedAnswer": { "@type": "Answer", "text": "You can book online, via WhatsApp, or by phone. Most appointments in ${safeName} are confirmed within 30 minutes, and same-day service is often available depending on technician availability." } }
     ]
   }
 };
@@ -111,12 +124,12 @@ locals.page = {
 <!-- About Section -->
 <%- include('../../partials/about-section') %>
 
-<!-- Services in ${loc.name} -->
-<section class="services-section section-pad bg-light" aria-label="Pest Control Services in ${loc.name}">
+<!-- Services in ${safeName} -->
+<section class="services-section section-pad bg-light" aria-label="Pest Control Services in ${safeName}">
   <div class="container">
     <div class="section-header text-center">
       <p class="section-tag">Professional Services</p>
-      <h2 class="section-title">Comprehensive Pest Control Services in ${loc.name}</h2>
+      <h2 class="section-title">Comprehensive Pest Control Services in ${safeName}</h2>
       <p class="section-desc">All pest problems solved with proven, effective treatments</p>
     </div>
     <div class="services-grid">
@@ -124,10 +137,10 @@ locals.page = {
       <article class="service-card" itemscope itemtype="https://schema.org/Service">
         <div class="service-card-icon"><%= svc.icon %></div>
         <div class="service-card-body">
-          <h3 class="service-card-title" itemprop="name"><%= svc.name %> Control in ${loc.name}</h3>
+          <h3 class="service-card-title" itemprop="name"><%= svc.name %> Control in ${safeName}</h3>
           <p class="service-card-desc" itemprop="description"><%= svc.shortDesc %></p>
         </div>
-        <a href="/services/<%= svc.slug %>" class="service-card-link btn btn-outline" aria-label="<%= svc.name %> Control in ${loc.name}">Learn More →</a>
+        <a href="/services/<%= svc.slug %>" class="service-card-link btn btn-outline" aria-label="<%= svc.name %> Control in ${safeName}">Learn More →</a>
       </article>
       <% }); %>
     </div>
@@ -135,7 +148,7 @@ locals.page = {
 </section>
 
 <!-- CTA 1 -->
-<% var ctaVariant = 'primary'; var ctaLocation = '${loc.name}'; %>
+<% var ctaVariant = 'primary'; var ctaLocation = '${safeName}'; %>
 <%- include('../../partials/cta') %>
 
 <!-- Detailed Content Section - Main -->
@@ -143,17 +156,17 @@ locals.page = {
   <div class="container">
     <div class="content-grid">
       <div class="content-main">
-        <h2>Professional Pest Control in ${loc.name}, ${loc.state}</h2>
-        <p>${loc.desc} PestControlNearMe is ${loc.name}'s leading pest control service provider, delivering professional pest management solutions for residential homes, commercial businesses, industrial facilities, and healthcare institutions.</p>
+        <h2>Professional Pest Control in ${safeName}, ${safeState}</h2>
+        <p>${safeDesc} PestControlNearMe is ${safeName}'s leading pest control service provider, delivering professional pest management solutions for residential homes, commercial businesses, industrial facilities, and healthcare institutions.</p>
 
-        <h3>Why Professional Pest Control is Essential in ${loc.name}</h3>
-        <p>With over ${loc.population} residents, ${loc.name} faces significant pest management challenges. The city's warm, humid climate, dense urban development, and diverse building structures create perfect breeding grounds for cockroaches, termites, mosquitoes, rodents, bed bugs, and numerous other pests. These aren't just nuisances—they pose serious health risks including disease transmission, food contamination, structural damage, and allergic reactions.</p>
-        <p>Professional pest control is not optional in ${loc.name}; it's a necessity for maintaining healthy, hygienic living and working environments. DIY solutions often fail because they don't address root causes or use inadequate treatment methods. PestControlNearMe's certified technicians use advanced techniques, scientific methodologies, and professional-grade treatments that deliver guaranteed results.</p>
+        <h3>Why Professional Pest Control is Essential in ${safeName}</h3>
+        <p>With over ${escapeForJS(loc.population)} residents, ${safeName} faces significant pest management challenges. The city's warm, humid climate, dense urban development, and diverse building structures create perfect breeding grounds for cockroaches, termites, mosquitoes, rodents, bed bugs, and numerous other pests. These aren't just nuisances—they pose serious health risks including disease transmission, food contamination, structural damage, and allergic reactions.</p>
+        <p>Professional pest control is not optional in ${safeName}; it's a necessity for maintaining healthy, hygienic living and working environments. DIY solutions often fail because they don't address root causes or use inadequate treatment methods. PestControlNearMe's certified technicians use advanced techniques, scientific methodologies, and professional-grade treatments that deliver guaranteed results.</p>
 
-        <h3>Common Pest Problems Affecting ${loc.name} Residents</h3>
-        <p>Depending on the season and locality within ${loc.name}, residents deal with various pest infestations:</p>
+        <h3>Common Pest Problems Affecting ${safeName} Residents</h3>
+        <p>Depending on the season and locality within ${safeName}, residents deal with various pest infestations:</p>
         <ul style="line-height: 2.2;">
-          <li><strong>Cockroaches:</strong> The most common household pest in ${loc.name}, thriving year-round in kitchens, food storage areas, and dark humid spaces. They spread diseases and contaminate food.</li>
+          <li><strong>Cockroaches:</strong> The most common household pest in ${safeName}, thriving year-round in kitchens, food storage areas, and dark humid spaces. They spread diseases and contaminate food.</li>
           <li><strong>Termites:</strong> Cause severe structural damage to buildings; monsoon season sees increased termite activity. Early detection is crucial to prevent expensive repairs.</li>
           <li><strong>Mosquitoes:</strong> Disease vectors responsible for dengue, malaria, and other vector-borne illnesses, especially during and after monsoon (June-September).</li>
           <li><strong>Rodents:</strong> Damage electrical wires, food supplies, and structures; more active during winter months when seeking warm shelter indoors.</li>
@@ -162,26 +175,26 @@ locals.page = {
           <li><strong>Spiders and Other Pests:</strong> While mostly harmless, some species bite and cause concern, particularly for families with children.</li>
         </ul>
 
-        <h3>Why Choose PestControlNearMe for Pest Control in ${loc.name}?</h3>
-        <p>We're not just another pest control company—we're ${loc.name}'s most trusted partner for comprehensive pest management. Here's what makes us different:</p>
+        <h3>Why Choose PestControlNearMe for Pest Control in ${safeName}?</h3>
+        <p>We're not just another pest control company—we're ${safeName}'s most trusted partner for comprehensive pest management. Here's what makes us different:</p>
         <ul style="line-height: 2.2;">
-          <li><strong>Certified & Highly Trained Technicians:</strong> All pest control technicians in ${loc.name} hold government licenses and undergo continuous professional training on latest pest management techniques.</li>
+          <li><strong>Certified & Highly Trained Technicians:</strong> All pest control technicians in ${safeName} hold government licenses and undergo continuous professional training on latest pest management techniques.</li>
           <li><strong>Safe, WHO-Approved Treatments:</strong> We use only government-certified chemicals approved by the WHO, ensuring complete safety for your family, children, and pets.</li>
           <li><strong>Advanced Pest Management Techniques:</strong> We don't just spray chemicals—we inspect thoroughly, identify root causes, and implement complete eradication programs backed by science.</li>
-          <li><strong>Same-Day Emergency Service:</strong> Emergency pest issues in ${loc.name} are handled on the same day whenever possible, minimizing damage and health risks.</li>
+          <li><strong>Same-Day Emergency Service:</strong> Emergency pest issues in ${safeName} are handled on the same day whenever possible, minimizing damage and health risks.</li>
           <li><strong>Industry's Best 3-Month Guarantee:</strong> If pests return within 3 months, we re-treat your property free of charge—no questions asked.</li>
-          <li><strong>Transparent Pricing & No Hidden Charges:</strong> Fixed quotes, best prices in ${loc.name}, and complete transparency from booking to service completion.</li>
+          <li><strong>Transparent Pricing & No Hidden Charges:</strong> Fixed quotes, best prices in ${safeName}, and complete transparency from booking to service completion.</li>
           <li><strong>24/7 Availability & Emergency Support:</strong> Round-the-clock support for emergency pest situations and urgent consultations.</li>
-          <li><strong>Deep Local Expertise:</strong> Our team knows ${loc.name}'s unique pest challenges, building types, climate patterns, and neighborhood-specific pest problems.</li>
+          <li><strong>Deep Local Expertise:</strong> Our team knows ${safeName}'s unique pest challenges, building types, climate patterns, and neighborhood-specific pest problems.</li>
         </ul>
 
-        <h3>Service Coverage Areas in ${loc.name}</h3>
-        <p>Our pest control network covers the entire ${loc.name} metropolitan area including:</p>
-        <p style="line-height: 2.2; font-size: 0.95rem;">All residential societies, gated communities, apartment complexes, commercial centers, shopping malls, hotels, restaurants, hospitals and clinics, schools and colleges, corporate offices, warehouses, manufacturing facilities, industrial establishments, and all other properties. Whether you're in central ${loc.name} or suburban areas, we have trained technicians ready to serve you.</p>
+        <h3>Service Coverage Areas in ${safeName}</h3>
+        <p>Our pest control network covers the entire ${safeName} metropolitan area including:</p>
+        <p style="line-height: 2.2; font-size: 0.95rem;">All residential societies, gated communities, apartment complexes, commercial centers, shopping malls, hotels, restaurants, hospitals and clinics, schools and colleges, corporate offices, warehouses, manufacturing facilities, industrial establishments, and all other properties. Whether you're in central ${safeName} or suburban areas, we have trained technicians ready to serve you.</p>
 
         <h3>Our 6-Step Professional Pest Control Process</h3>
         <ol style="line-height: 2.2; font-weight: 500;">
-          <li><strong>Comprehensive Free Inspection:</strong> We visit your property in ${loc.name} to assess pest problems, identify root causes, and determine infestation severity.</li>
+          <li><strong>Comprehensive Free Inspection:</strong> We visit your property in ${safeName} to assess pest problems, identify root causes, and determine infestation severity.</li>
           <li><strong>Customized Treatment Plan:</strong> Based on inspection findings and pest type, we create a tailored pest control strategy specific to your property's needs.</li>
           <li><strong>Professional Treatment Application:</strong> Our certified technicians apply scientifically-proven treatment methods using professional-grade products.</li>
           <li><strong>Prevention & Sanitation Advice:</strong> We provide detailed guidance on preventing future infestations and maintaining pest-free environments.</li>
@@ -189,13 +202,13 @@ locals.page = {
           <li><strong>3-Month Guarantee Coverage:</strong> All services backed by our industry-leading 3-month guarantee for complete peace of mind.</li>
         </ol>
 
-        <h3>Seasonal Pest Trends & Activities in ${loc.name}</h3>
+        <h3>Seasonal Pest Trends & Activities in ${safeName}</h3>
         <p><strong>Monsoon Season (June-September):</strong> Mosquito populations surge dramatically due to water stagnation; cockroaches thrive in dampness. Urgent mosquito control and prevention measures needed.</p>
         <p><strong>Post-Monsoon Period (October-November):</strong> Termites become increasingly active; cockroaches continue thriving in residual moisture. Preventive termite treatment recommended.</p>
         <p><strong>Winter Season (December-February):</strong> Rodent invasions increase significantly as pests seek warm shelter indoors. Rodent control and prevention essential.</p>
         <p><strong>Summer Season (March-May):</strong> All pest species remain active; bed bugs and cockroaches especially problematic in hotels and residential areas. Comprehensive pest management recommended.</p>
 
-        <h3>Top 10 Prevention Tips for Your ${loc.name} Property</h3>
+        <h3>Top 10 Prevention Tips for Your ${safeName} Property</h3>
         <p>While professional pest control is essential, these preventive measures significantly reduce pest attraction and breeding:</p>
         <ol style="line-height: 2.2;">
           <li>Keep kitchens and food storage areas absolutely clean and dry at all times</li>
@@ -211,32 +224,32 @@ locals.page = {
         </ol>
 
         <h3>Comprehensive 3-Month Service Guarantee Details</h3>
-        <p>We stand behind our work with a comprehensive 3-month guarantee that's industry-leading. If any pest recurrence is observed within 3 months of treatment at your ${loc.name} property, we will provide additional treatments absolutely free, including labor and materials. This guarantee covers cockroaches, termites, mosquitoes, rodents, bed bugs, ants, flies, spiders, and other pests mentioned in your service agreement. We're confident in our methods and want complete peace of mind for every customer.</p>
+        <p>We stand behind our work with a comprehensive 3-month guarantee that's industry-leading. If any pest recurrence is observed within 3 months of treatment at your ${safeName} property, we will provide additional treatments absolutely free, including labor and materials. This guarantee covers cockroaches, termites, mosquitoes, rodents, bed bugs, ants, flies, spiders, and other pests mentioned in your service agreement. We're confident in our methods and want complete peace of mind for every customer.</p>
 
-        <h3>How to Book Pest Control Services in ${loc.name}</h3>
-        <p>Booking professional pest control in ${loc.name} is quick, easy, and hassle-free. You can reach us through multiple convenient channels:</p>
+        <h3>How to Book Pest Control Services in ${safeName}</h3>
+        <p>Booking professional pest control in ${safeName} is quick, easy, and hassle-free. You can reach us through multiple convenient channels:</p>
         <ul style="line-height: 2.2;">
           <li><strong>Call Us:</strong> <%= phone %> (24/7 availability)</li>
           <li><strong>WhatsApp:</strong> Send us a message for instant response and quick booking</li>
           <li><strong>Online Form:</strong> Fill the form on this page—we'll contact you within 30 minutes</li>
           <li><strong>Email:</strong> <%= email %> for detailed inquiries</li>
         </ul>
-        <p>Most appointments in ${loc.name} are confirmed within 30 minutes, and same-day service is often available depending on technician availability and service urgency.</p>
+        <p>Most appointments in ${safeName} are confirmed within 30 minutes, and same-day service is often available depending on technician availability and service urgency.</p>
       </div>
 
       <!-- Sidebar - Contact & Info -->
       <div>
         <div class="why-choose-box">
           <h3>📋 Get Free Pest Inspection</h3>
-          <p style="font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.6;">Fill the form to schedule a free pest inspection in ${loc.name}. Our expert will contact you within 30 minutes to confirm your appointment.</p>
+          <p style="font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.6;">Fill the form to schedule a free pest inspection in ${safeName}. Our expert will contact you within 30 minutes to confirm your appointment.</p>
           <%- include('../../partials/contact-form', { compact: true }) %>
         </div>
 
         <div class="why-choose-box" style="margin-top:1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-          <h3 style="color: white; margin-bottom: 1rem;">📊 ${loc.name} Quick Facts</h3>
+          <h3 style="color: white; margin-bottom: 1rem;">📊 ${safeName} Quick Facts</h3>
           <ul class="why-list" style="color: rgba(255,255,255,0.95); line-height: 2.2;">
-            <li><span style="color: #ffd700; margin-right: 0.5rem;">📍</span> Location: ${loc.name}, ${loc.state}</li>
-            <li><span style="color: #ffd700; margin-right: 0.5rem;">👥</span> Population: ${loc.population}</li>
+            <li><span style="color: #ffd700; margin-right: 0.5rem;">📍</span> Location: ${safeName}, ${safeState}</li>
+            <li><span style="color: #ffd700; margin-right: 0.5rem;">👥</span> Population: ${escapeForJS(loc.population)}</li>
             <li><span style="color: #ffd700; margin-right: 0.5rem;">⚡</span> Same-Day Service Available</li>
             <li><span style="color: #ffd700; margin-right: 0.5rem;">🛡️</span> 3-Month Service Guarantee</li>
             <li><span style="color: #ffd700; margin-right: 0.5rem;">💰</span> Competitive Prices Guaranteed</li>
@@ -248,7 +261,7 @@ locals.page = {
 
         <div class="why-choose-box" style="margin-top:1.5rem; background: #fff3cd; border-left: 4px solid #ffc107;">
           <h3 style="color: #856404; margin-bottom: 0.8rem;">🚨 Emergency Pest Control</h3>
-          <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #856404; line-height: 1.6;">Discovered pests at your ${loc.name} property? Don't wait—we provide emergency pest control 24/7. Call immediately for same-day treatment.</p>
+          <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #856404; line-height: 1.6;">Discovered pests at your ${safeName} property? Don't wait—we provide emergency pest control 24/7. Call immediately for same-day treatment.</p>
           <a href="tel:<%= phone %>" class="btn btn-primary" style="width: 100%; text-align: center; display: block;">☎️ Call Emergency: <%= phone %></a>
         </div>
       </div>
@@ -276,10 +289,10 @@ locals.page = {
         { q: 'What neighborhoods and areas in ${loc.name} do you service?', a: 'We service all residential colonies, commercial complexes, industrial zones, hospitals, hotels, restaurants, offices, warehouses, and every area across ${loc.name} and surrounding suburbs. Our network covers the entire metropolitan area.' },
         { q: 'Are your pest control treatments safe for children, elderly, and pets in ${loc.name}?', a: 'Absolutely yes. All treatments in ${loc.name} use WHO-approved, government-certified, safe chemicals. Our trained technicians follow strict safety protocols. We provide specific precautions and guidance for families with children and pets.' },
         { q: 'What exactly does your 3-month service guarantee include?', a: 'Our 3-month guarantee is industry-leading. If pests return within 3 months of treatment in ${loc.name}, we will re-treat your property completely free, including all labor and materials. This covers all pest types in your service agreement.' },
-        { q: 'How do I book pest control services in ${loc.name}?', a: 'Call <%= phone %>, WhatsApp us, fill our online form, or email us. Appointments are typically confirmed within 30 minutes. Same-day service is frequently available depending on technician availability and service urgency.' },
+        { q: 'How do I book pest control services in ${safeName}?', a: 'Call your_phone_here, WhatsApp us, fill our online form, or email us. Appointments are typically confirmed within 30 minutes. Same-day service is frequently available depending on technician availability and service urgency.' },
         { q: 'Do you offer specialized commercial pest control in ${loc.name}?', a: 'Yes, we provide specialized commercial pest control for offices, restaurants, hotels, hospitals, schools, warehouses, factories, and all commercial establishments in ${loc.name} with customized service schedules.' },
         { q: 'How long does a typical pest control treatment take in ${loc.name}?', a: 'Treatment duration depends on property size and pest type. Most residential cockroach/general pest treatments take 30-60 minutes. Termite and large-scale treatments may take longer. Our technician informs you of expected time before starting work.' },
-        { q: 'Do I need to vacate my property during pest control treatment in ${loc.name}?', a: 'For most treatments in ${loc.name}, you don't need to leave your property. For certain special treatments like fumigation, we advise staying away for specified hours for safety. Our technician provides complete guidance.' }
+        { q: 'Do I need to vacate my property during pest control treatment in ${safeName}?', a: 'For most treatments in ${safeName}, you do not need to leave your property. For certain special treatments like fumigation, we advise staying away for specified hours for safety. Our technician provides complete guidance.' }
       ]; %>
       <% locationFaqs.forEach(function(item, i) { %>
       <div class="faq-item" itemscope itemtype="https://schema.org/Question">
