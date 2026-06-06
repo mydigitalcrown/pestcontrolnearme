@@ -289,7 +289,7 @@ locals.page = {
         { q: 'What neighborhoods and areas in ${loc.name} do you service?', a: 'We service all residential colonies, commercial complexes, industrial zones, hospitals, hotels, restaurants, offices, warehouses, and every area across ${loc.name} and surrounding suburbs. Our network covers the entire metropolitan area.' },
         { q: 'Are your pest control treatments safe for children, elderly, and pets in ${loc.name}?', a: 'Absolutely yes. All treatments in ${loc.name} use WHO-approved, government-certified, safe chemicals. Our trained technicians follow strict safety protocols. We provide specific precautions and guidance for families with children and pets.' },
         { q: 'What exactly does your 3-month service guarantee include?', a: 'Our 3-month guarantee is industry-leading. If pests return within 3 months of treatment in ${loc.name}, we will re-treat your property completely free, including all labor and materials. This covers all pest types in your service agreement.' },
-        { q: 'How do I book pest control services in ${safeName}?', a: 'Call your_phone_here, WhatsApp us, fill our online form, or email us. Appointments are typically confirmed within 30 minutes. Same-day service is frequently available depending on technician availability and service urgency.' },
+        { q: 'How do I book pest control services in ${safeName}?', a: 'Call us, WhatsApp us, fill our online form, or email us. Appointments are typically confirmed within 30 minutes. Same-day service is frequently available depending on technician availability and service urgency.' },
         { q: 'Do you offer specialized commercial pest control in ${loc.name}?', a: 'Yes, we provide specialized commercial pest control for offices, restaurants, hotels, hospitals, schools, warehouses, factories, and all commercial establishments in ${loc.name} with customized service schedules.' },
         { q: 'How long does a typical pest control treatment take in ${loc.name}?', a: 'Treatment duration depends on property size and pest type. Most residential cockroach/general pest treatments take 30-60 minutes. Termite and large-scale treatments may take longer. Our technician informs you of expected time before starting work.' },
         { q: 'Do I need to vacate my property during pest control treatment in ${safeName}?', a: 'For most treatments in ${safeName}, you do not need to leave your property. For certain special treatments like fumigation, we advise staying away for specified hours for safety. Our technician provides complete guidance.' }
@@ -326,12 +326,12 @@ locals.page = {
       <p class="section-desc">We also serve these nearby locations</p>
     </div>
     <div class="location-nearby">
-      <% locations.filter(function(l){ return l.slug !== '${loc.slug}'; }).slice(0, 20).forEach(function(loc) { %>
-      <a href="/pest-control-in/<%= loc.slug %>" class="location-card">
+      <% locations.filter(function(l){ return l.slug !== '${loc.slug}'; }).slice(0, 20).forEach(function(locItem) { %>
+      <a href="/pest-control-in/<%= locItem.slug %>" class="location-card">
         <div class="location-card-pin">📍</div>
         <div class="location-card-info">
-          <h3 class="location-name"><%= loc.name %></h3>
-          <p class="location-state"><%= loc.state %></p>
+          <h3 class="location-name"><%= locItem.name %></h3>
+          <p class="location-state"><%= locItem.state %></p>
         </div>
         <span class="location-arrow">→</span>
       </a>
@@ -344,7 +344,7 @@ locals.page = {
 <%- include('../../partials/reviews') %>
 
 <!-- Final CTA -->
-<% ctaVariant = 'primary'; ctaLocation = '${loc.name}'; %>
+<% ctaVariant = 'primary'; ctaLocation = '${safeName}'; %>
 <%- include('../../partials/cta') %>
 
 <%- include('../../partials/footer') %>
